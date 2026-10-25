@@ -1,176 +1,261 @@
-CHAMPIONS-LEAGUE-AUSLOSUNG – NEU
-UNGEPRÜFTER ENTWURF
+CHAMPIONS-LEAGUE-AUSLOSUNG – KORRIGIERT
+AUTOMATISCH GEPRÜFTER SPIELPLAN
 
-Die Listen sind unverändert übernommen und noch nicht als gültige Gesamtauslosung verifiziert.
-Begegnungen müssen für beide Spieler und für denselben Spieltag übereinstimmen.
-Jeder Spieler muss pro Spieltag genau einmal antreten.
-5er Korbi heißt jetzt Kaiser. Kaiser und 5er sind getrennte Spieler.
+Auslosungs-Seed: 20261025
+Neu erzeugte Auslosung; ersetzt den fehlerhaften ursprünglichen Entwurf.
+16 Spieler, 8 Spieltage, 64 unterschiedliche Begegnungen.
+Jeder Spieler: genau 2 Gegner aus jedem der 4 Lostöpfe.
+Jeder Spieler tritt pro Spieltag genau einmal an.
+Kaiser (vormals 5er Korbi) und 5er sind getrennte Spieler.
+Die Reihenfolge der Namen legt kein Heimrecht fest.
 Es sind noch keine Termine festgelegt.
 
 LOSTOPF 1
 
 Abi
-Spieltag 1: Mäcci
-Spieltag 2: Bastl
+Spieltag 1: Moser
+Spieltag 2: Ginzei
 Spieltag 3: Hirschi
-Spieltag 4: Moser
-Spieltag 5: Tom
-Spieltag 6: Schipfei
-Spieltag 7: More
-Spieltag 8: Hellei
+Spieltag 4: Hauslon
+Spieltag 5: Schipfei
+Spieltag 6: 5er
+Spieltag 7: Kaiser
+Spieltag 8: Anderl
 
 Tom
 Spieltag 1: Ginzei
-Spieltag 2: Bachi
+Spieltag 2: Hellei
 Spieltag 3: Anderl
-Spieltag 4: Kaiser
-Spieltag 5: Abi
-Spieltag 6: Hauslon
-Spieltag 7: Hofer Flo
-Spieltag 8: Mäcci
+Spieltag 4: Bachi
+Spieltag 5: Hauslon
+Spieltag 6: More
+Spieltag 7: 5er
+Spieltag 8: Hirschi
 
 Anderl
-Spieltag 1: 5er
-Spieltag 2: More
+Spieltag 1: Hofer Flo
+Spieltag 2: Moser
 Spieltag 3: Tom
-Spieltag 4: Hellei
-Spieltag 5: Hirschi
-Spieltag 6: Bastl
-Spieltag 7: Moser
-Spieltag 8: Bachi
+Spieltag 4: Schipfei
+Spieltag 5: Bastl
+Spieltag 6: Kaiser
+Spieltag 7: Mäcci
+Spieltag 8: Abi
 
 Hirschi
-Spieltag 1: Abi
-Spieltag 2: Kaiser
-Spieltag 3: Anderl
-Spieltag 4: Hauslon
-Spieltag 5: More
-Spieltag 6: Ginzei
-Spieltag 7: Schipfei
-Spieltag 8: Hofer Flo
+Spieltag 1: Hellei
+Spieltag 2: Hofer Flo
+Spieltag 3: Abi
+Spieltag 4: Bastl
+Spieltag 5: Bachi
+Spieltag 6: Mäcci
+Spieltag 7: More
+Spieltag 8: Tom
 
 LOSTOPF 2
 
 Bastl
-Spieltag 1: Abi
+Spieltag 1: 5er
 Spieltag 2: Mäcci
-Spieltag 3: Hofer Flo
-Spieltag 4: More
-Spieltag 5: Schipfei
-Spieltag 6: Anderl
-Spieltag 7: Bachi
-Spieltag 8: Kaiser
+Spieltag 3: Hauslon
+Spieltag 4: Hirschi
+Spieltag 5: Anderl
+Spieltag 6: Hofer Flo
+Spieltag 7: Ginzei
+Spieltag 8: Schipfei
 
 Bachi
-Spieltag 1: Tom
-Spieltag 2: Ginzei
-Spieltag 3: Kaiser
-Spieltag 4: Schipfei
-Spieltag 5: Hauslon
-Spieltag 6: 5er
-Spieltag 7: Anderl
-Spieltag 8: More
+Spieltag 1: Kaiser
+Spieltag 2: More
+Spieltag 3: Schipfei
+Spieltag 4: Tom
+Spieltag 5: Hirschi
+Spieltag 6: Hellei
+Spieltag 7: Moser
+Spieltag 8: Hauslon
 
 Hauslon
-Spieltag 1: Schipfei
-Spieltag 2: Hofer Flo
-Spieltag 3: Kaiser
-Spieltag 4: Hirschi
-Spieltag 5: Bachi
-Spieltag 6: Tom
-Spieltag 7: Mäcci
-Spieltag 8: Hellei
+Spieltag 1: Mäcci
+Spieltag 2: 5er
+Spieltag 3: Bastl
+Spieltag 4: Abi
+Spieltag 5: Tom
+Spieltag 6: Ginzei
+Spieltag 7: Hofer Flo
+Spieltag 8: Bachi
 
 Schipfei
-Spieltag 1: Hauslon
-Spieltag 2: Moser
-Spieltag 3: More
-Spieltag 4: Bachi
-Spieltag 5: Bastl
-Spieltag 6: Abi
-Spieltag 7: Hirschi
-Spieltag 8: Ginzei
+Spieltag 1: More
+Spieltag 2: Kaiser
+Spieltag 3: Bachi
+Spieltag 4: Anderl
+Spieltag 5: Abi
+Spieltag 6: Moser
+Spieltag 7: Hellei
+Spieltag 8: Bastl
 
 LOSTOPF 3
 
 Hellei
-Spieltag 1: Moser
-Spieltag 2: Kaiser
-Spieltag 3: Anderl
-Spieltag 4: More
-Spieltag 5: Ginzei
-Spieltag 6: 5er
-Spieltag 7: Hauslon
-Spieltag 8: Abi
+Spieltag 1: Hirschi
+Spieltag 2: Tom
+Spieltag 3: Moser
+Spieltag 4: 5er
+Spieltag 5: Mäcci
+Spieltag 6: Bachi
+Spieltag 7: Schipfei
+Spieltag 8: Ginzei
 
 Ginzei
 Spieltag 1: Tom
-Spieltag 2: Bachi
-Spieltag 3: Moser
-Spieltag 4: Mäcci
-Spieltag 5: Hellei
-Spieltag 6: Hirschi
-Spieltag 7: Schipfei
-Spieltag 8: Kaiser
+Spieltag 2: Abi
+Spieltag 3: Hofer Flo
+Spieltag 4: Kaiser
+Spieltag 5: More
+Spieltag 6: Hauslon
+Spieltag 7: Bastl
+Spieltag 8: Hellei
 
 Moser
-Spieltag 1: Hellei
-Spieltag 2: Schipfei
-Spieltag 3: Ginzei
-Spieltag 4: Abi
-Spieltag 5: Anderl
-Spieltag 6: Bastl
-Spieltag 7: 5er
-Spieltag 8: More
+Spieltag 1: Abi
+Spieltag 2: Anderl
+Spieltag 3: Hellei
+Spieltag 4: Mäcci
+Spieltag 5: 5er
+Spieltag 6: Schipfei
+Spieltag 7: Bachi
+Spieltag 8: Hofer Flo
 
 Hofer Flo
-Spieltag 1: Bastl
-Spieltag 2: Hauslon
-Spieltag 3: Kaiser
-Spieltag 4: Mäcci
-Spieltag 5: Tom
-Spieltag 6: Hirschi
-Spieltag 7: 5er
-Spieltag 8: More
+Spieltag 1: Anderl
+Spieltag 2: Hirschi
+Spieltag 3: Ginzei
+Spieltag 4: More
+Spieltag 5: Kaiser
+Spieltag 6: Bastl
+Spieltag 7: Hauslon
+Spieltag 8: Moser
 
 LOSTOPF 4
 
 More
-Spieltag 1: Anderl
+Spieltag 1: Schipfei
 Spieltag 2: Bachi
-Spieltag 3: Schipfei
-Spieltag 4: Hellei
-Spieltag 5: Hirschi
-Spieltag 6: Moser
-Spieltag 7: Abi
-Spieltag 8: Hofer Flo
-
-Kaiser
-Spieltag 1: Hirschi
-Spieltag 2: Hellei
-Spieltag 3: Hauslon
-Spieltag 4: Tom
-Spieltag 5: Hofer Flo
-Spieltag 6: Bastl
-Spieltag 7: Ginzei
+Spieltag 3: Kaiser
+Spieltag 4: Hofer Flo
+Spieltag 5: Ginzei
+Spieltag 6: Tom
+Spieltag 7: Hirschi
 Spieltag 8: 5er
 
+Kaiser
+Spieltag 1: Bachi
+Spieltag 2: Schipfei
+Spieltag 3: More
+Spieltag 4: Ginzei
+Spieltag 5: Hofer Flo
+Spieltag 6: Anderl
+Spieltag 7: Abi
+Spieltag 8: Mäcci
+
 Mäcci
-Spieltag 1: Abi
+Spieltag 1: Hauslon
 Spieltag 2: Bastl
-Spieltag 3: Ginzei
-Spieltag 4: Hofer Flo
-Spieltag 5: 5er
-Spieltag 6: Tom
-Spieltag 7: Hauslon
-Spieltag 8: Anderl
+Spieltag 3: 5er
+Spieltag 4: Moser
+Spieltag 5: Hellei
+Spieltag 6: Hirschi
+Spieltag 7: Anderl
+Spieltag 8: Kaiser
 
 5er
-Spieltag 1: Anderl
-Spieltag 2: Bachi
-Spieltag 3: Moser
-Spieltag 4: Hofer Flo
-Spieltag 5: Mäcci
-Spieltag 6: Hellei
-Spieltag 7: Kaiser
-Spieltag 8: Bastl
+Spieltag 1: Bastl
+Spieltag 2: Hauslon
+Spieltag 3: Mäcci
+Spieltag 4: Hellei
+Spieltag 5: Moser
+Spieltag 6: Abi
+Spieltag 7: Tom
+Spieltag 8: More
+
+ALLE BEGEGNUNGEN NACH SPIELTAG
+
+Spieltag 1
+Schipfei – More
+Bastl – 5er
+Hirschi – Hellei
+Abi – Moser
+Tom – Ginzei
+Hauslon – Mäcci
+Anderl – Hofer Flo
+Bachi – Kaiser
+
+Spieltag 2
+Anderl – Moser
+Schipfei – Kaiser
+Hirschi – Hofer Flo
+Hauslon – 5er
+Abi – Ginzei
+Tom – Hellei
+Bachi – More
+Bastl – Mäcci
+
+Spieltag 3
+Moser – Hellei
+Schipfei – Bachi
+Hofer Flo – Ginzei
+More – Kaiser
+Abi – Hirschi
+5er – Mäcci
+Bastl – Hauslon
+Anderl – Tom
+
+Spieltag 4
+Anderl – Schipfei
+Hellei – 5er
+Abi – Hauslon
+Hirschi – Bastl
+Tom – Bachi
+Hofer Flo – More
+Ginzei – Kaiser
+Moser – Mäcci
+
+Spieltag 5
+Abi – Schipfei
+Tom – Hauslon
+Hirschi – Bachi
+Hofer Flo – Kaiser
+Hellei – Mäcci
+Moser – 5er
+Anderl – Bastl
+Ginzei – More
+
+Spieltag 6
+Schipfei – Moser
+Abi – 5er
+Hirschi – Mäcci
+Tom – More
+Bachi – Hellei
+Anderl – Kaiser
+Bastl – Hofer Flo
+Hauslon – Ginzei
+
+Spieltag 7
+Schipfei – Hellei
+Anderl – Mäcci
+Bastl – Ginzei
+Hirschi – More
+Tom – 5er
+Bachi – Moser
+Abi – Kaiser
+Hauslon – Hofer Flo
+
+Spieltag 8
+Ginzei – Hellei
+Hauslon – Bachi
+Mäcci – Kaiser
+Tom – Hirschi
+Hofer Flo – Moser
+Anderl – Abi
+5er – More
+Bastl – Schipfei

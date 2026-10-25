@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#142d27">
-  <meta name="description" content="Die neue Champions-League-Auslosung: 16 Spieler, vier Lostöpfe und acht Gegner pro Spieler. Alle persönlichen Spielpläne auf einen Blick. Ungeprüfter Entwurf.">
+  <meta name="description" content="Der korrigierte Champions-League-Spielplan: 16 Spieler, acht Spieltage und genau zwei Gegner aus jedem Lostopf. Automatisch auf alle Spielplanregeln geprüft.">
   <title>Champions League · Unser Spielplan</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=verified-1">
+  <script src="./schedule-data.js?v=verified-1" defer></script>
+  <script src="./app.js?v=verified-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#spielplan">Zum Spielplan</a>
@@ -33,7 +34,7 @@
           <div class="hero-stats"><div><strong>16</strong><span>SPIELER</span></div><div><strong>04</strong><span>LOSTÖPFE</span></div><div><strong>08</strong><span>GEGNER JE SPIELER</span></div></div>
         </div>
       </div>
-      <div class="draft-banner"><div class="wrap"><span class="draft-label">! &nbsp; UNGEPRÜFTER ENTWURF</span><span>Die Begegnungen sind noch nicht als gültiger Gesamtspielplan bestätigt. <a href="#hinweis">Hinweis lesen <span aria-hidden="true">↗</span></a></span></div></div>
+      <div class="draft-banner verified-banner"><div class="wrap"><span class="draft-label">✓ &nbsp; SPIELPLAN GEPRÜFT</span><span>Neue Auslosung: genau 2 Gegner aus jedem Lostopf und ein Spiel pro Spieltag. <a href="#hinweis">Details lesen <span aria-hidden="true">↗</span></a></span></div></div>
     </section>
 
     <section id="spielplan" class="wrap schedule-section" aria-labelledby="schedule-title">
@@ -41,7 +42,7 @@
       <div class="plan-controls"><div class="player-field"><label for="player-select">Wähle deinen Namen</label><select id="player-select" aria-controls="personal-plan"></select></div><button id="share-button" class="secondary-button" type="button">Spielplan-Link kopieren <span aria-hidden="true">↗</span></button></div>
       <div id="personal-plan" aria-live="polite" aria-atomic="true"></div>
       <p id="share-status" class="share-status" role="status"></p>
-      <p class="schedule-caption">Die Reihenfolge entspricht der eingereichten Liste. Es sind noch keine Termine festgelegt.</p>
+      <p class="schedule-caption">Korrigierte, neu erzeugte Auslosung. Die acht Spieltage sind für alle Spieler abgestimmt. Es sind noch keine Termine festgelegt.</p>
       <noscript><p>Bitte aktiviere JavaScript für die Spielerauswahl. Alle Spielpläne stehen auch in der <a href="./spielplaene.txt">Textversion</a>.</p></noscript>
     </section>
 
@@ -49,10 +50,10 @@
       <div class="section-heading"><div><p class="eyebrow">DAS TEILNEHMERFELD</p><h2 id="pots-title">Vier Töpfe. Alle dabei.</h2></div><span class="section-index" aria-hidden="true">02 / LOSTÖPFE</span></div>
       <p class="section-description">Die vier Lostöpfe bleiben unverändert. „5er Korbi“ heißt jetzt „Kaiser“.<br>Wähle einen Spieler, um seinen Spielplan anzusehen.</p>
       <div id="pots" class="pots-grid"></div>
-      <details class="all-plans"><summary>Alle Spielpläne im Überblick <span aria-hidden="true">+</span></summary><p class="table-hint">Die Spalten zeigen die Gegner für Spieltag 1–8. Auf kleinen Bildschirmen seitlich scrollen.</p><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Gegner laut eingereichter Auslosung · ungeprüfter Entwurf</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>
+      <details class="all-plans"><summary>Alle Spielpläne im Überblick <span aria-hidden="true">+</span></summary><p class="table-hint">Die Spalten zeigen die Gegner für Spieltag 1–8. Auf kleinen Bildschirmen seitlich scrollen.</p><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Korrigierte Auslosung · 64 unterschiedliche Begegnungen · automatisch geprüft</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>
     </div></section>
 
-    <aside id="hinweis" class="wrap note-section" aria-labelledby="note-title"><span class="note-icon" aria-hidden="true">!</span><div><p class="eyebrow">TRANSPARENZ ZUR AUSLOSUNG</p><h2 id="note-title">Veröffentlicht. Noch nicht verifiziert.</h2><p>Diese Seite zeigt die bereitgestellte neue Auslosung unverändert. Sie ist noch nicht als gültige Gesamtauslosung verifiziert: Die Begegnungen müssen für beide beteiligten Spieler übereinstimmen, und jeder Spieler muss pro Spieltag genau einmal antreten.</p><p>Bitte behandelt die Listen bis zur Bestätigung als Entwurf.</p><a href="./spielplaene.txt">Alle Spielpläne als Text öffnen <span aria-hidden="true">↗</span></a></div></aside>
+    <aside id="hinweis" class="wrap note-section" aria-labelledby="note-title"><span class="note-icon" aria-hidden="true">✓</span><div><p class="eyebrow">TRANSPARENZ ZUR AUSLOSUNG</p><h2 id="note-title">Neu ausgelost. Alle Regeln geprüft.</h2><p>Dieser neu erzeugte Spielplan ersetzt den fehlerhaften ursprünglichen Entwurf. Die Spieler und ihre Lostöpfe bleiben gleich; die Begegnungen und ihre Reihenfolge wurden neu ausgelost. Jeder Spieler hat acht verschiedene Gegner, genau zwei aus jedem Lostopf, und tritt an jedem der acht Spieltage genau einmal an. Jede Begegnung steht bei beiden Spielern am selben Spieltag.</p><p>64 unterschiedliche Begegnungen. Die Reihenfolge der Namen legt kein Heimrecht fest. Termine sind noch offen.</p><p>Auslosungs-Seed: <span id="draw-seed"></span> · <a href="./schedule.json">Spielplan-Daten</a> · <a href="https://github.com/basthel/champions-league-spielplan/blob/main/scripts/generate_schedule.py">Generator-Script</a></p><a href="./spielplaene.txt">Alle Spielpläne als Text öffnen <span aria-hidden="true">↗</span></a></div></aside>
   </main>
   <footer class="wrap site-footer"><span>UNSERE LIGA <span aria-hidden="true">✦</span> UNSER SPIELPLAN</span><a href="#">Zurück nach oben ↑</a></footer>
 </body>

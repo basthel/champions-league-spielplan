@@ -7,15 +7,15 @@
   <meta name="description" content="Der korrigierte Champions-League-Spielplan: 16 Spieler, acht Spieltage und genau zwei Gegner aus jedem Lostopf. Automatisch auf alle Spielplanregeln geprüft.">
   <title>Champions League · Unser Spielplan</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=verified-1">
-  <script src="./schedule-data.js?v=verified-1" defer></script>
-  <script src="./app.js?v=verified-1" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=matchdays-1">
+  <script src="./schedule-data.js?v=matchdays-1" defer></script>
+  <script src="./app.js?v=matchdays-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#spielplan">Zum Spielplan</a>
   <header class="site-header wrap">
     <a class="brand" href="./" aria-label="Champions League Startseite"><span class="brand-mark" aria-hidden="true">CL<span>✦</span></span><span>UNSERE LIGA<span>CHAMPIONS LEAGUE</span></span></a>
-    <nav aria-label="Hauptnavigation"><a href="#spielplan">Spielplan</a><a href="#lostoepfe">Lostöpfe</a></nav>
+    <nav aria-label="Hauptnavigation"><a href="#spielplan">Spielplan</a><a href="#spieltage">Spieltage</a><a href="#lostoepfe">Lostöpfe</a></nav>
     <span class="header-note">DIE NEUE AUSLOSUNG</span>
   </header>
 
@@ -46,8 +46,24 @@
       <noscript><p>Bitte aktiviere JavaScript für die Spielerauswahl. Alle Spielpläne stehen auch in der <a href="./spielplaene.txt">Textversion</a>.</p></noscript>
     </section>
 
+    <section id="spieltage" class="wrap schedule-section matchday-section" aria-labelledby="matchdays-title">
+      <div class="section-heading"><div><p class="eyebrow">DIE LIGA AUF EINEN BLICK</p><h2 id="matchdays-title">Alle Spiele. Ein Spieltag.</h2></div><span class="section-index" aria-hidden="true">02 / SPIELTAGE</span></div>
+      <div class="plan-controls matchday-controls">
+        <div class="day-picker">
+          <button id="previous-matchday" class="day-step" type="button" aria-label="Vorheriger Spieltag" aria-controls="matchday-plan">←</button>
+          <div class="player-field"><label for="matchday-select">Spieltag auswählen</label><select id="matchday-select" aria-controls="matchday-plan"></select></div>
+          <button id="next-matchday" class="day-step" type="button" aria-label="Nächster Spieltag" aria-controls="matchday-plan">→</button>
+        </div>
+        <button id="matchday-share-button" class="secondary-button" type="button">Spieltag-Link kopieren <span aria-hidden="true">↗</span></button>
+      </div>
+      <div id="matchday-plan" aria-live="polite" aria-atomic="true"></div>
+      <p id="matchday-share-status" class="share-status" role="status"></p>
+      <p class="schedule-caption">Alle 16 Spieler treten einmal an. Die Reihenfolge der Namen legt kein Heimrecht fest. Termine sind noch offen.</p>
+      <noscript><p>Alle Begegnungen nach Spieltag stehen auch in der <a href="./spielplaene.txt">Textversion</a>.</p></noscript>
+    </section>
+
     <section id="lostoepfe" class="pots-section" aria-labelledby="pots-title"><div class="wrap">
-      <div class="section-heading"><div><p class="eyebrow">DAS TEILNEHMERFELD</p><h2 id="pots-title">Vier Töpfe. Alle dabei.</h2></div><span class="section-index" aria-hidden="true">02 / LOSTÖPFE</span></div>
+      <div class="section-heading"><div><p class="eyebrow">DAS TEILNEHMERFELD</p><h2 id="pots-title">Vier Töpfe. Alle dabei.</h2></div><span class="section-index" aria-hidden="true">03 / LOSTÖPFE</span></div>
       <p class="section-description">Die vier Lostöpfe bleiben unverändert. „5er Korbi“ heißt jetzt „Kaiser“.<br>Wähle einen Spieler, um seinen Spielplan anzusehen.</p>
       <div id="pots" class="pots-grid"></div>
       <details class="all-plans"><summary>Alle Spielpläne im Überblick <span aria-hidden="true">+</span></summary><p class="table-hint">Die Spalten zeigen die Gegner für Spieltag 1–8. Auf kleinen Bildschirmen seitlich scrollen.</p><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Korrigierte Auslosung · 64 unterschiedliche Begegnungen · automatisch geprüft</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>

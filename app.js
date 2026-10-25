@@ -60,8 +60,44 @@ function choose(id, updateURL = false) {
 }
 
 select.addEventListener('change', () => choose(select.value, true));
-window.addEventListener('popstate', () => choose(new URL(location.href).searchParams.get('spieler')));
+window.addEventListener('popstate', () => {
+  const params = new URL(location.href).searchParams;
+  choose(params.get('spieler'));
+  chooseMatchday(params.get('spieltag'));
+});
 choose(new URL(location.href).searchParams.get('spieler'));
+
+const matchdaySelect = document.querySelector('#matchday-select');
+const matchdayPlan = document.querySelector('#matchday-plan');
+const matchdayStatus = document.querySelector('#matchday-share-status');
+const previousMatchday = document.querySelector('#previous-matchday');
+const nextMatchday = document.querySelector('#next-matchday');
+
+for (const day of matchdays) {
+  const option = document.createElement('option');
+  option.value = day.matchday;
+  option.textContent = `Spieltag ${day.matchday}`;
+  matchdaySelect.append(option);
+}
+
+function chooseMatchday(value, updateURL = false) {
+  const day = matchdays.find(day => String(day.matchday) === String(value)) || matchdays[0];
+  matchdaySelect.value = String(day.matchday);
+  matchdayStatus.textContent = '';
+  previousMatchday.disabled = day.matchday === matchdays[0].matchday;
+  nextMatchday.disabled = day.matchday === matchdays[matchdays.length - 1].matchday;
+  matchdayPlan.innerHTML = `<div class="plan-title"><h3>Spieltag ${day.matchday}</h3><span class="pot-tag">${day.matches.length} BEGEGNUNGEN</span></div><ol class="matchday-fixtures">${day.matches.map(([a, b], index) => `<li class="matchday-fixture"><span class="match-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><div class="match-player"><span>${a}</span><small>Lostopf ${players.find(player => player.name === a).pot}</small></div><span class="match-versus">vs.</span><div class="match-player"><span>${b}</span><small>Lostopf ${players.find(player => player.name === b).pot}</small></div></li>`).join('')}</ol>`;
+  if (updateURL) {
+    const url = new URL(location.href);
+    url.searchParams.set('spieltag', day.matchday);
+    history.replaceState(null, '', url);
+  }
+}
+
+matchdaySelect.addEventListener('change', () => chooseMatchday(matchdaySelect.value, true));
+previousMatchday.addEventListener('click', () => chooseMatchday(Number(matchdaySelect.value) - 1, true));
+nextMatchday.addEventListener('click', () => chooseMatchday(Number(matchdaySelect.value) + 1, true));
+chooseMatchday(new URL(location.href).searchParams.get('spieltag'));
 
 const tbody = document.querySelector('#all-plans-table tbody');
 for (const player of players) {
@@ -70,19 +106,32 @@ for (const player of players) {
   tbody.append(row);
 }
 
-document.querySelector('#share-button').addEventListener('click', async () => {
-  const url = new URL(location.href);
-  url.searchParams.set('spieler', select.value);
-  url.hash = 'spielplan';
+async function copyPlanLink(url, feedback) {
   try {
     await navigator.clipboard.writeText(url.href);
-    status.textContent = 'Link kopiert – bereit zum Teilen!';
+    feedback.textContent = 'Link kopiert – bereit zum Teilen!';
   } catch {
-    status.replaceChildren(document.createTextNode('Kopiere diesen Link: '));
+    feedback.replaceChildren(document.createTextNode('Kopiere diesen Link: '));
     const link = document.createElement('a');
     link.href = url.href;
     link.textContent = url.href;
     link.style.overflowWrap = 'anywhere';
-    status.append(link);
+    feedback.append(link);
   }
+}
+
+document.querySelector('#share-button').addEventListener('click', () => {
+  const url = new URL(location.href);
+  url.searchParams.delete('spieltag');
+  url.searchParams.set('spieler', select.value);
+  url.hash = 'spielplan';
+  copyPlanLink(url, status);
+});
+
+document.querySelector('#matchday-share-button').addEventListener('click', () => {
+  const url = new URL(location.href);
+  url.searchParams.delete('spieler');
+  url.searchParams.set('spieltag', matchdaySelect.value);
+  url.hash = 'spieltage';
+  copyPlanLink(url, matchdayStatus);
 });

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d27">
+  <meta name="description" content="Die neue Champions-League-Auslosung: 16 Spieler, vier Lostöpfe und acht Gegner pro Spieler. Alle persönlichen Spielpläne auf einen Blick. Ungeprüfter Entwurf.">
+  <title>Champions League · Unser Spielplan</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#spielplan">Zum Spielplan</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Champions League Startseite"><span class="brand-mark" aria-hidden="true">CL<span>✦</span></span><span>UNSERE LIGA<span>CHAMPIONS LEAGUE</span></span></a>
+    <nav aria-label="Hauptnavigation"><a href="#spielplan">Spielplan</a><a href="#lostoepfe">Lostöpfe</a></nav>
+    <span class="header-note">DIE NEUE AUSLOSUNG</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> CHAMPIONS LEAGUE · LIGAPHASE</p>
+          <h1 id="hero-title">16 Spieler.<br>Ein <span>Ziel.</span></h1>
+          <p class="hero-description">Die Gegner stehen auf dem Zettel.<br>Hier findest du deinen Weg durch die Ligaphase.</p>
+          <a class="primary-button" href="#spielplan">Deinen Spielplan finden <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-graphic" aria-hidden="true">
+          <div class="graphic-top"><span>DER WEG ZUM TITEL</span><span>✦</span></div>
+          <svg class="trophy" viewBox="0 0 300 260" fill="none"><circle cx="150" cy="119" r="105" stroke="currentColor" stroke-opacity=".12"/><circle cx="150" cy="119" r="80" stroke="currentColor" stroke-opacity=".12"/><path d="M105 61h90l-8 62c-3 25-18 40-37 40s-34-15-37-40l-8-62Z" stroke="currentColor" stroke-width="4"/><path d="M108 76H80v19c0 25 15 40 36 40m76-59h28v19c0 25-15 40-36 40M150 163v39m-29 17h58m-44-17h30l8 17h-46l8-17Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="m150 87 5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1 5-11Z" fill="currentColor"/><path d="m52 39 3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1 3-7Zm191 135 3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1 3-7Z" fill="currentColor"/></svg>
+          <div class="hero-stats"><div><strong>16</strong><span>SPIELER</span></div><div><strong>04</strong><span>LOSTÖPFE</span></div><div><strong>08</strong><span>GEGNER JE SPIELER</span></div></div>
+        </div>
+      </div>
+      <div class="draft-banner"><div class="wrap"><span class="draft-label">! &nbsp; UNGEPRÜFTER ENTWURF</span><span>Die Begegnungen sind noch nicht als gültiger Gesamtspielplan bestätigt. <a href="#hinweis">Hinweis lesen <span aria-hidden="true">↗</span></a></span></div></div>
+    </section>
+
+    <section id="spielplan" class="wrap schedule-section" aria-labelledby="schedule-title">
+      <div class="section-heading"><div><p class="eyebrow">DEIN WEG DURCH DIE LIGAPHASE</p><h2 id="schedule-title">Wer ist dein Gegner?</h2></div><span class="section-index" aria-hidden="true">01 / SPIELPLAN</span></div>
+      <div class="plan-controls"><div class="player-field"><label for="player-select">Wähle deinen Namen</label><select id="player-select" aria-controls="personal-plan"></select></div><button id="share-button" class="secondary-button" type="button">Spielplan-Link kopieren <span aria-hidden="true">↗</span></button></div>
+      <div id="personal-plan" aria-live="polite" aria-atomic="true"></div>
+      <p id="share-status" class="share-status" role="status"></p>
+      <p class="schedule-caption">Die Reihenfolge entspricht der eingereichten Liste. Es sind noch keine Termine festgelegt.</p>
+      <noscript><p>Bitte aktiviere JavaScript für die Spielerauswahl. Alle Spielpläne stehen auch in der <a href="./spielplaene.txt">Textversion</a>.</p></noscript>
+    </section>
+
+    <section id="lostoepfe" class="pots-section" aria-labelledby="pots-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">DAS TEILNEHMERFELD</p><h2 id="pots-title">Vier Töpfe. Alle dabei.</h2></div><span class="section-index" aria-hidden="true">02 / LOSTÖPFE</span></div>
+      <p class="section-description">Die vier Lostöpfe bleiben unverändert. „5er Korbi“ heißt jetzt „Kaiser“.<br>Wähle einen Spieler, um seinen Spielplan anzusehen.</p>
+      <div id="pots" class="pots-grid"></div>
+      <details class="all-plans"><summary>Alle Spielpläne im Überblick <span aria-hidden="true">+</span></summary><p class="table-hint">Die Spalten zeigen die Gegner für Spieltag 1–8. Auf kleinen Bildschirmen seitlich scrollen.</p><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Gegner laut eingereichter Auslosung · ungeprüfter Entwurf</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>
+    </div></section>
+
+    <aside id="hinweis" class="wrap note-section" aria-labelledby="note-title"><span class="note-icon" aria-hidden="true">!</span><div><p class="eyebrow">TRANSPARENZ ZUR AUSLOSUNG</p><h2 id="note-title">Veröffentlicht. Noch nicht verifiziert.</h2><p>Diese Seite zeigt die bereitgestellte neue Auslosung unverändert. Sie ist noch nicht als gültige Gesamtauslosung verifiziert: Die Begegnungen müssen für beide beteiligten Spieler übereinstimmen, und jeder Spieler muss pro Spieltag genau einmal antreten.</p><p>Bitte behandelt die Listen bis zur Bestätigung als Entwurf.</p><a href="./spielplaene.txt">Alle Spielpläne als Text öffnen <span aria-hidden="true">↗</span></a></div></aside>
+  </main>
+  <footer class="wrap site-footer"><span>UNSERE LIGA <span aria-hidden="true">✦</span> UNSER SPIELPLAN</span><a href="#">Zurück nach oben ↑</a></footer>
+</body>
+</html>

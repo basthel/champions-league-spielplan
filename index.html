@@ -7,9 +7,9 @@
   <meta name="description" content="Haumdaucher Champions League. Alle Spieltage, Begegnungen und Spieler. 16 Spieler, 8 Spieltage, 2 Gegner aus jedem Lostopf.">
   <title>Haumdaucher · Champions League</title>
   <link rel="icon" href="./assets/haumdaucher-logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="./styles.css?v=arena-3">
+  <link rel="stylesheet" href="./styles.css?v=arena-4">
   <script src="./schedule-data.js?v=matchdays-1" defer></script>
-  <script src="./app.js?v=arena-3" defer></script>
+  <script src="./app.js?v=arena-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Zum Spielplan</a>
@@ -25,16 +25,16 @@
       <div class="club-stats"><div><strong>16</strong><span>Spieler</span></div><div><strong>08</strong><span>Spieltage</span></div><div><strong>64</strong><span>Spiele</span></div></div>
     </header>
     <main id="content" tabindex="-1">
-      <div class="workspace-top"><span>LIGAPHASE</span><span class="verified">✓ Spielplan geprüft</span></div>
+      <div class="workspace-top"><span>LIGAPHASE</span></div>
       <section id="spieltage" class="view" aria-labelledby="matchday-heading">
-        <div class="view-heading"><div><p class="heading-kicker">ALLE BEGEGNUNGEN</p><h2 id="matchday-heading">Spieltag <span id="day-number">01</span></h2></div><div class="heading-actions"><button id="previous-matchday" class="icon-button" aria-label="Vorheriger Spieltag" aria-controls="matchday-fixtures" type="button">←</button><button id="next-matchday" class="icon-button" aria-label="Nächster Spieltag" aria-controls="matchday-fixtures" type="button">→</button><button id="matchday-share-button" class="share-button" type="button" aria-label="Spieltag-Link kopieren"><span class="share-label">Teilen</span> <span aria-hidden="true">↗</span></button></div></div>
+        <div class="view-heading"><div><p class="heading-kicker">ALLE BEGEGNUNGEN</p><h2 id="matchday-heading">Spieltag <span id="day-number">01</span></h2></div><div class="heading-actions"><button id="previous-matchday" class="icon-button" aria-label="Vorheriger Spieltag" aria-controls="matchday-fixtures" type="button">←</button><button id="next-matchday" class="icon-button" aria-label="Nächster Spieltag" aria-controls="matchday-fixtures" type="button">→</button></div></div>
         <div class="day-layout">
           <div id="round-selector" class="round-selector" role="group" aria-label="Spieltag auswählen"></div>
           <div class="matchday-body"><div class="fixture-labels"><span>8 BEGEGNUNGEN</span><span>TERMINE OFFEN</span></div><ol id="matchday-fixtures" class="matchday-fixtures" aria-live="polite" aria-label="Begegnungen am ausgewählten Spieltag"></ol></div>
         </div>
       </section>
       <section id="spielplan" class="view" aria-labelledby="player-heading" hidden>
-        <div class="view-heading"><div><p class="heading-kicker">DEIN SPIELPLAN</p><h2 id="player-heading">Abi</h2></div><button id="share-button" class="share-button" type="button" aria-label="Spielplan-Link kopieren"><span class="share-label">Teilen</span> <span aria-hidden="true">↗</span></button></div>
+        <div class="view-heading"><div><p class="heading-kicker">DEIN SPIELPLAN</p><h2 id="player-heading">Abi</h2></div></div>
         <div class="player-controls"><label for="player-select">Spieler auswählen</label><select id="player-select" aria-controls="personal-plan"></select><span id="player-pot" class="player-pot"></span></div>
         <ol id="personal-plan" class="personal-plan" aria-live="polite" aria-label="Persönliche Begegnungen"></ol>
         <div id="pot-summary" class="pot-summary"></div>
@@ -43,7 +43,6 @@
         <div class="view-heading"><div><p class="heading-kicker">16 SPIELER · 4 LOSTÖPFE</p><h2 id="pots-heading">Das Feld<span class="title-period">.</span></h2></div></div>
         <div id="pots" class="pots-grid"></div>
       </section>
-      <p id="share-status" class="share-status" role="status"></p>
       <footer class="app-footer">
         <div class="footer-links"><span>HAUMDAUCHER CL</span><a href="./spielplaene.txt">Spielplan herunterladen ↗</a></div>
         <details class="overview"><summary>Gesamtplan</summary><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Alle acht Spieltage</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>

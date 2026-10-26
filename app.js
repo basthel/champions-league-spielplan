@@ -37,7 +37,6 @@ function showView(view, update = false) {
   feedback.textContent = '';
   if (update) {
     updateURL({}, currentView, true);
-    document.querySelector('#content').scrollIntoView({behavior: 'instant', block: 'start'});
   }
 }
 

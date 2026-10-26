@@ -120,3 +120,16 @@ function restoreLocation() {
 window.addEventListener('popstate', restoreLocation);
 window.addEventListener('hashchange', restoreLocation);
 restoreLocation();
+
+
+// Match the primary mobile content to the space above the floating navigation.
+function syncContentInset() {
+  const headerBottom = document.querySelector('.club-header').getBoundingClientRect().bottom + window.scrollY;
+  document.documentElement.style.setProperty('--header-bottom', headerBottom + 'px');
+}
+if ('ResizeObserver' in window) {
+  new ResizeObserver(syncContentInset).observe(document.querySelector('.club-header'));
+}
+window.addEventListener('resize', syncContentInset);
+document.fonts?.ready.then(syncContentInset);
+syncContentInset();

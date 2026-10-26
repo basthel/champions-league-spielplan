@@ -1,6 +1,7 @@
 'use strict';
 
 // Arena uses the validated fixtures for every view.
+const chevron = '<svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg>';
 const slug = name => name.toLowerCase().replaceAll('ä', 'ae').replaceAll(' ', '-');
 const byName = new Map(players.map(player => [player.name, player]));
 const viewNames = ['spieltage', 'spielplan', 'lostoepfe'];
@@ -34,7 +35,7 @@ function renderMatchday(value, update = false) {
   document.querySelector('#previous-matchday').disabled = currentDay === 1;
   document.querySelector('#next-matchday').disabled = currentDay === matchdays.length;
   document.querySelectorAll('[data-day]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.day) === currentDay)));
-  document.querySelector('#matchday-fixtures').innerHTML = day.matches.map(([a, b], index) => `<li class="matchday-fixture"><div class="match-meta"><span>${String(index + 1).padStart(2, '0')}</span><span>BEGEGNUNG</span></div><div class="match-pair"><button class="match-player" data-player="${slug(a)}" aria-label="Spielplan von ${a} ansehen" type="button"><strong>${a}</strong><small>Lostopf ${byName.get(a).pot}</small></button><span class="versus">vs.</span><button class="match-player" data-player="${slug(b)}" aria-label="Spielplan von ${b} ansehen" type="button"><strong>${b}</strong><small>Lostopf ${byName.get(b).pot}</small></button></div><span class="match-arrow" aria-hidden="true">↗</span></li>`).join('');
+  document.querySelector('#matchday-fixtures').innerHTML = day.matches.map(([a, b], index) => `<li class="matchday-fixture"><div class="match-meta"><span>${String(index + 1).padStart(2, '0')}</span><span>BEGEGNUNG</span></div><div class="match-pair"><button class="match-player" data-player="${slug(a)}" aria-label="Spielplan von ${a} ansehen" type="button"><strong>${a}</strong><small>Lostopf ${byName.get(a).pot}</small></button><span class="versus">vs.</span><button class="match-player" data-player="${slug(b)}" aria-label="Spielplan von ${b} ansehen" type="button"><strong>${b}</strong><small>Lostopf ${byName.get(b).pot}</small></button></div><span class="match-arrow" aria-hidden="true">${chevron}</span></li>`).join('');
   if (update) updateURL({spieltag: currentDay}, 'spieltage');
 }
 
@@ -43,7 +44,7 @@ function renderPlayer(id, update = false) {
   document.querySelector('#player-select').value = slug(currentPlayer.name);
   document.querySelector('#player-heading').textContent = currentPlayer.name;
   document.querySelector('#player-pot').textContent = `Lostopf ${currentPlayer.pot}`;
-  document.querySelector('#personal-plan').innerHTML = currentPlayer.opponents.map((name, index) => `<li><button type="button" class="personal-fixture" data-open-day="${index + 1}" aria-label="Spieltag ${index + 1}: ${currentPlayer.name} gegen ${name} ansehen"><span class="personal-day">ST <strong>${String(index + 1).padStart(2, '0')}</strong></span><span class="personal-opponent"><strong>${name}</strong><small>Lostopf ${byName.get(name).pot}</small></span><span class="personal-arrow" aria-hidden="true">↗</span></button></li>`).join('');
+  document.querySelector('#personal-plan').innerHTML = currentPlayer.opponents.map((name, index) => `<li><button type="button" class="personal-fixture" data-open-day="${index + 1}" aria-label="Spieltag ${index + 1}: ${currentPlayer.name} gegen ${name} ansehen"><span class="personal-day">ST <strong>${String(index + 1).padStart(2, '0')}</strong></span><span class="personal-opponent"><strong>${name}</strong><small>Lostopf ${byName.get(name).pot}</small></span><span class="personal-arrow" aria-hidden="true">${chevron}</span></button></li>`).join('');
   document.querySelector('#pot-summary').innerHTML = [1, 2, 3, 4].map(pot => `<span>Topf ${pot}<strong>${currentPlayer.opponents.filter(name => byName.get(name).pot === pot).length} Gegner</strong></span>`).join('');
   if (update) updateURL({spieler: slug(currentPlayer.name)}, 'spielplan');
 }
@@ -72,7 +73,7 @@ for (let pot = 1; pot <= 4; pot++) {
   document.querySelector('#player-select').append(group);
   const section = document.createElement('section');
   section.className = 'pot';
-  section.innerHTML = `<div class="pot-heading"><h3>Lostopf</h3><span>0${pot}</span></div><ul>${members.map(player => `<li><button type="button" data-player="${slug(player.name)}"><span>${player.name}</span><span aria-hidden="true">↗</span></button></li>`).join('')}</ul>`;
+  section.innerHTML = `<div class="pot-heading"><h3>Lostopf</h3><span>0${pot}</span></div><ul>${members.map(player => `<li><button type="button" data-player="${slug(player.name)}"><span>${player.name}</span><span aria-hidden="true">${chevron}</span></button></li>`).join('')}</ul>`;
   document.querySelector('#pots').append(section);
 }
 

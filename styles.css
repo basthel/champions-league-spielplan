@@ -54,3 +54,5 @@
   .matchday-controls .heading-actions{gap:4px}
   .matchday-controls .icon-button{width:30px;min-width:30px;min-height:44px;padding:4px;font-size:18px}
 }
+
+.action-chevron{display:inline-block;width:16px;height:16px;vertical-align:middle;flex-shrink:0}

@@ -240,3 +240,23 @@
   :root .matchday-fixtures{grid-auto-rows:clamp(68px,calc((100svh - 320px)/4),104px)}
   :root .match-player strong{font-size:clamp(17px,5vw,21px)}
 }
+
+/* Keep the statistics overview compact enough for a single mobile view. */
+#statistik .section-title{margin-bottom:12px}
+#statistik .section-title h2{font-size:48px}
+#statistik .statistics-filters{gap:8px;margin-bottom:12px}
+#statistik .statistics-filters label{gap:4px;font-size:9px}
+#statistik .statistics-filters select{min-height:36px;padding:7px;font-size:11px}
+#statistik .stats-summary{margin-bottom:6px;font-size:9px}
+#statistik .statistics-empty{padding:4px 0 8px;font-size:10px}
+#statistik .stat-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+#statistik .stat-metrics>div{padding:10px 8px 10px 0}
+#statistik .stat-metrics dt{font-size:9px}
+#statistik .stat-metrics dd{font-size:30px;margin-top:4px}
+#statistik .stat-metrics small{font-size:8px;margin-top:4px}
+#statistik .metric-notes{margin-top:10px;font-size:9px}
+#statistik .statistics-ranking caption{font-size:24px;padding-bottom:6px}
+#statistik .statistics-ranking th,#statistik .statistics-ranking td{padding:7px 6px}
+#statistik .statistics-ranking button{font-size:22px}
+@media(max-width:800px){#statistik .section-title h2{font-size:36px}}
+@media(max-width:360px){#statistik .stat-metrics dd{font-size:26px}}

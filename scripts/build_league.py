@@ -172,6 +172,7 @@ def aggregate(records):
         result[field] = metric_sum(records, field)
     for field in sorted(PERCENTAGES - {'checkoutPct'}):
         result[field] = mean([r['stats'].get(field) for r in records])
+    result['coverage']['checkoutPct'] = len(attempted)
     result['legDifference'] = result['legsWon'] - result['legsLost']
     result['winPct'] = round(100 * result['wins'] / len(records), 4) if records else None
     return result

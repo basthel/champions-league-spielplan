@@ -116,6 +116,7 @@ class LeagueTests(unittest.TestCase):
         result = league.aggregate(records)
         self.assertEqual(result['scores180'], 0)
         self.assertEqual(result['checkoutPct'], 0)
+        self.assertEqual(result['coverage']['checkoutPct'], 1)
         self.assertIsNone(result['bestLegDarts'])
 
     def test_invalid_stats_and_checkout_disagreement(self):

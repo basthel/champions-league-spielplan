@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "img_2193",
-  "status": "pending",
+  "status": "example",
   "source": {
     "path": "data/screenshots/IMG_2193.png",
     "sha256": "e6861939e8c9e1bd543a959e023f64667c166238bb06793eb9e6a69c9d5d79a6",
     "originalFilename": "IMG_2193.png"
   },
   "reviewNotes": [
-    "Example or league status not yet confirmed. Source shows a set-based match ending at six won legs; not a completed best-of-12 league score.",
+    "User confirmed these screenshots are examples only; excluded from league standings and statistics. Source shows a set-based game ending at six won legs.",
     "Transcribed visually; absent fields stay null. UI contact labels and photo dates are not used as player identities or league dates.",
     "Source high-round buckets are preserved as reported; no assumption that they are cumulative."
   ],

@@ -7,7 +7,7 @@ Website: https://basthel.github.io/champions-league-spielplan/
 Arena is the selected design, with Club-style side-by-side match boxes.
 Tabs: Tabelle (default), Spieltage, Spielplan, Statistik, Lostöpfe.
 Standings and statistics are generated from screenshot-backed match results.
-The four initial screenshots are archived as reference/pending evidence; they
+The four initial screenshots are archived as user-confirmed examples; they
 are not silently counted as league results. The table shows games, points,
 legs won:lost, game average and checkout percentage. Statistics can be filtered
 by league, pot or player, with scoring, checkout, highlights, accuracy and leaderboards.

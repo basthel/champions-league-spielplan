@@ -21,7 +21,7 @@ do not require manual spreadsheet entry or an on-site upload form.
    accommodate a result. Only confirmed results enter `data/results.json`.
    Best of 12 ends at 7:0 through 7:5, or 6:6. Win 2 points, draw 1 each, loss 0.
    The screenshot examples supplied on 2026-10-26 end at six won legs and are
-   reference evidence, not valid best-of-12 league results.
+   examples explicitly confirmed by the user, not league results.
 5. Make a confirmed JSON record with:
    `id`, `status: "confirmed"`, scheduled `matchday`, `playedAt` (ISO date or null),
    `sources: [{path, sha256}]`, and two `players: [{name, legsWon, stats}]`.

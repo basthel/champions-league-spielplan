@@ -7,9 +7,11 @@
   <meta name="description" content="Haumdaucher Champions League. Alle Spieltage, Begegnungen und Spieler. 16 Spieler, 8 Spieltage, 2 Gegner aus jedem Lostopf.">
   <title>Haumdaucher · Champions League</title>
   <link rel="icon" href="./assets/haumdaucher-logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="./styles.css?v=arena-13">
+  <link rel="stylesheet" href="./styles.css?v=arena-14">
   <script src="./schedule-data.js?v=matchdays-1" defer></script>
-  <script src="./app.js?v=arena-7" defer></script>
+  <script src="./league-data.js?v=results-1" defer></script>
+  <script src="./league-ui.js?v=results-1" defer></script>
+  <script src="./app.js?v=arena-8" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Zum Spielplan</a>
@@ -28,12 +30,17 @@
     </header>
     <main id="content" tabindex="-1">
       <section id="tabelle" class="view" aria-labelledby="standings-heading">
-        <div class="section-title"><h2 id="standings-heading">Tabelle<span class="title-period">.</span></h2><span class="data-note">Noch keine Ergebnisse</span></div>
-        <table class="standings-table">
-          <caption class="visually-hidden">Ligatabelle vor dem ersten erfassten Ergebnis, alphabetisch sortiert</caption>
-          <thead><tr><th scope="col" class="rank-column">#</th><th scope="col">Spieler</th><th scope="col"><abbr title="Gespielte Spiele">Sp</abbr></th><th scope="col"><abbr title="Siege">S</abbr></th><th scope="col"><abbr title="Niederlagen">N</abbr></th></tr></thead>
-          <tbody id="standings-body"></tbody>
-        </table>
+        <div class="section-title"><h2 id="standings-heading">Tabelle<span class="title-period">.</span></h2><span id="standings-status" class="data-note"></span></div>
+        <p class="standings-scroll-hint">Average &amp; Checkout <span aria-hidden="true">→</span></p>
+        <div class="standings-scroll" role="region" aria-label="Ligatabelle, seitlich scrollbar" tabindex="0">
+          <table class="standings-table">
+            <caption class="visually-hidden">Ligatabelle: Spiele, Punkte, gewonnene und verlorene Legs, Game Average und Checkout-Quote</caption>
+            <thead><tr><th scope="col" class="rank-column">#</th><th scope="col">Spieler</th><th scope="col"><abbr title="Gespielte Spiele">Sp</abbr></th><th scope="col"><abbr title="Punkte: Sieg 2, Unentschieden 1, Niederlage 0">Pkt</abbr></th><th scope="col">Legs</th><th scope="col"><abbr title="Mittelwert der Spiel-Averages">Game Ø</abbr></th><th scope="col"><abbr title="Gewonnene Legs geteilt durch Checkout-Versuche">CO %</abbr></th></tr></thead>
+            <tbody id="standings-body"></tbody>
+          </table>
+        </div>
+        <p class="table-key">Spiele · Punkte · Legs gewonnen:verloren · Game-Ø · Checkout %</p>
+        <details class="metric-notes"><summary>Wertung &amp; Berechnung</summary><p>Best of 12: bis 7 Legs oder 6:6. Sieg 2 Punkte · Remis 1 · Niederlage 0. Sortierung: Punkte, Legdifferenz, gewonnene Legs; Gleichstände teilen sich den Rang.</p><p>Game-Ø: Mittel der erfassten Spiel-Averages. Checkout: gewonnene Legs / Checkout-Versuche. Fehlende Werte bleiben leer; Kennzahlen verwenden nur erfasste Werte.</p></details>
       </section>
       <section id="spieltage" class="view" aria-labelledby="matchday-heading" hidden>
         <div class="view-heading"><div><p class="heading-kicker">ALLE BEGEGNUNGEN</p><h2 id="matchday-heading">Spieltag <span id="day-number">01</span></h2></div></div>
@@ -50,10 +57,17 @@
       </section>
       <section id="statistik" class="view" aria-labelledby="statistics-heading" hidden>
         <div class="section-title"><h2 id="statistics-heading">Statistik<span class="title-period">.</span></h2></div>
-        <dl id="tournament-stats" class="tournament-stats"></dl>
-        <div class="results-progress"><div><span>Erfasste Ergebnisse</span><strong>0 <span id="total-fixtures"></span></strong></div><progress id="results-progress" value="0" max="64" aria-label="Erfasste Ergebnisse"></progress></div>
-        <div class="performance-heading"><h3>Leistungen</h3><span class="data-note">Noch keine Spielstatistiken</span></div>
-        <dl class="performance-stats"><div><dt>3-Dart-Average</dt><dd>—</dd></div><div><dt>180er</dt><dd>—</dd></div><div><dt>Höchstes Checkout</dt><dd>—</dd></div></dl>
+        <div class="statistics-filters">
+          <label>Ansicht<select id="stats-scope" aria-controls="statistics-content"></select></label>
+          <label>Kategorie<select id="stats-category" aria-controls="statistics-content">
+            <option value="overview">Übersicht</option><option value="scoring">Scoring</option><option value="checkout">Checkout</option><option value="highlights">Highlights</option><option value="accuracy">Trefferquoten</option><option value="ranking">Ranglisten</option>
+          </select></label>
+          <label id="ranking-filter" hidden>Kennzahl<select id="stats-ranking" aria-controls="statistics-content">
+            <option value="average">Game-Ø</option><option value="checkoutPct">Checkout %</option><option value="scores180">180er</option><option value="highestCheckout">Höchstes Checkout</option><option value="bestLegDarts">Bestes Leg</option><option value="first9Average">First-9-Ø</option>
+          </select></label>
+        </div>
+        <div id="statistics-content" aria-live="polite"></div>
+        <details class="metric-notes"><summary>So werden die Statistiken berechnet</summary><p>Gesamt und Lostopf fassen die erfassten Spielerleistungen zusammen. Spiele werden einmal gezählt; Spielerbilanzen und Legs aus Sicht der ausgewählten Spieler. Game-Ø und First-9-Ø: Mittel der erfassten Spielwerte. Checkout %: erfolgreiche Checkouts / erfasste Versuche. Trefferquoten: Mittel der gemeldeten Quoten.</p><p>3-Dart-Ø (gewichtet) ist nur verfügbar, wenn für alle erfassten Averages die Dartanzahl vorliegt. Fehlende Statistiken werden nicht als 0 gewertet. 60+, 100+ und 140+ werden unverändert aus der Scoring-App übernommen und nicht addiert.</p></details>
       </section>
       <section id="lostoepfe" class="view" aria-labelledby="pots-heading" hidden>
         <div class="view-heading"><div><p class="heading-kicker">16 SPIELER · 4 LOSTÖPFE</p><h2 id="pots-heading">Das Feld<span class="title-period">.</span></h2></div></div>
@@ -62,7 +76,7 @@
       <footer class="app-footer">
         <div class="footer-links"><span>HAUMDAUCHER CL</span><a href="./spielplaene.txt">Spielplan herunterladen <svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></a></div>
         <details class="overview"><summary>Gesamtplan</summary><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Alle acht Spieltage</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>
-        <details id="hinweis"><summary>Regeln & Auslosung</summary><p>8 verschiedene Gegner. Je 2 aus jedem Lostopf. Ein Spiel pro Spieltag. Kein Heimrecht zugewiesen.</p><p>Die korrigierte Auslosung ersetzt den ursprünglichen Entwurf. Kaiser (vormals 5er Korbi) und 5er sind getrennte Spieler.</p><p>Seed <span id="draw-seed"></span> · <a href="./schedule.json">Daten</a> · <a href="https://github.com/basthel/champions-league-spielplan/blob/main/scripts/generate_schedule.py">Generator</a></p></details>
+        <details id="hinweis"><summary>Regeln & Auslosung</summary><p>Best of 12 · Sieg 2 Punkte · Remis 1 · Niederlage 0.</p><p>8 verschiedene Gegner. Je 2 aus jedem Lostopf. Ein Spiel pro Spieltag. Kein Heimrecht zugewiesen.</p><p>Die korrigierte Auslosung ersetzt den ursprünglichen Entwurf. Kaiser (vormals 5er Korbi) und 5er sind getrennte Spieler.</p><p>Seed <span id="draw-seed"></span> · <a href="./schedule.json">Daten</a> · <a href="https://github.com/basthel/champions-league-spielplan/blob/main/scripts/generate_schedule.py">Generator</a></p></details>
       </footer>
       <noscript><p>Bitte JavaScript aktivieren oder den <a href="./spielplaene.txt">Spielplan als Text öffnen</a>.</p></noscript>
     </main>

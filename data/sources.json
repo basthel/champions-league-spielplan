@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "extraction": "data/extractions/IMG_2193.json",
+      "path": "data/screenshots/IMG_2193.png",
+      "sha256": "e6861939e8c9e1bd543a959e023f64667c166238bb06793eb9e6a69c9d5d79a6",
+      "originalFilename": "IMG_2193.png"
+    },
+    {
+      "extraction": "data/extractions/IMG_2192.json",
+      "path": "data/screenshots/IMG_2192.png",
+      "sha256": "c9809706c90d5a65d6277f5ce2cfd4a9f561f1bfaa589cea46bfb44a9a9c00b4",
+      "originalFilename": "IMG_2192.png"
+    },
+    {
+      "extraction": "data/extractions/IMG_2191.json",
+      "path": "data/screenshots/IMG_2191.png",
+      "sha256": "adc4cbbc51dc1e75d1007ac461c49d2fa95bdba33148d0217d51292b8ec62a87",
+      "originalFilename": "IMG_2191.png"
+    },
+    {
+      "extraction": "data/extractions/IMG_2190.json",
+      "path": "data/screenshots/IMG_2190.png",
+      "sha256": "977591fdff422aec4e28476a5ccb67bfef8198127b7661f2e3bb984a636b5620",
+      "originalFilename": "IMG_2190.png"
+    }
+  ]
+}

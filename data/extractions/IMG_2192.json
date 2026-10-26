@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "img_2192",
+  "status": "pending",
+  "source": {
+    "path": "data/screenshots/IMG_2192.png",
+    "sha256": "c9809706c90d5a65d6277f5ce2cfd4a9f561f1bfaa589cea46bfb44a9a9c00b4",
+    "originalFilename": "IMG_2192.png"
+  },
+  "reviewNotes": [
+    "Example or league status not yet confirmed. Source shows a set-based match ending at six won legs; not a completed best-of-12 league score.",
+    "Transcribed visually; absent fields stay null. UI contact labels and photo dates are not used as player identities or league dates.",
+    "Source high-round buckets are preserved as reported; no assumption that they are cumulative."
+  ],
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": 6,
+      "stats": {
+        "setsWon": 3,
+        "average": 56.36,
+        "first9Average": 52.56,
+        "highestVisit": 140,
+        "bestLegAverage": 79.11,
+        "hit20or19Pct": 57.5,
+        "hit60Pct": 8.75,
+        "hit60or57Pct": 9.38,
+        "scores60": 10,
+        "scores100": 7,
+        "scores140": 1,
+        "scores180": 0,
+        "highestCheckout": 40,
+        "bestLegDarts": 19,
+        "checkoutAttempts": 27,
+        "checkoutPct": 22.22
+      }
+    },
+    {
+      "name": "Ginzei",
+      "legsWon": 0,
+      "stats": {
+        "setsWon": 0,
+        "average": 47.02,
+        "first9Average": 53.83,
+        "highestVisit": 100,
+        "bestLegAverage": 60.13,
+        "hit20or19Pct": 53.09,
+        "hit60Pct": 2.47,
+        "hit60or57Pct": 5.56,
+        "scores60": 12,
+        "scores100": 1,
+        "scores140": 0,
+        "scores180": 0,
+        "highestCheckout": 0,
+        "bestLegDarts": 0,
+        "checkoutAttempts": 3,
+        "checkoutPct": 0
+      }
+    }
+  ]
+}

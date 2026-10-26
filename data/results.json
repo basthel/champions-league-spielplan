@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "rules": {
+    "maxLegs": 12,
+    "winPoints": 2,
+    "drawPoints": 1,
+    "lossPoints": 0,
+    "ranking": [
+      "points",
+      "legDifference",
+      "legsWon"
+    ],
+    "format": "best-of-12"
+  },
+  "matches": []
+}

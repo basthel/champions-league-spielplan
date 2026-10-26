@@ -35,7 +35,7 @@ function renderMatchday(value, update = false) {
   document.querySelector('#previous-matchday').disabled = currentDay === 1;
   document.querySelector('#next-matchday').disabled = currentDay === matchdays.length;
   document.querySelectorAll('[data-day]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.day) === currentDay)));
-  document.querySelector('#matchday-fixtures').innerHTML = day.matches.map(([a, b], index) => `<li class="matchday-fixture"><div class="match-meta"><span>${String(index + 1).padStart(2, '0')}</span><span>BEGEGNUNG</span></div><div class="match-pair"><button class="match-player" data-player="${slug(a)}" aria-label="Spielplan von ${a} ansehen" type="button"><strong>${a}</strong><small>Lostopf ${byName.get(a).pot}</small></button><span class="versus">vs.</span><button class="match-player" data-player="${slug(b)}" aria-label="Spielplan von ${b} ansehen" type="button"><strong>${b}</strong><small>Lostopf ${byName.get(b).pot}</small></button></div><span class="match-arrow" aria-hidden="true">${chevron}</span></li>`).join('');
+  document.querySelector('#matchday-fixtures').innerHTML = day.matches.map(([a, b], index) => { const result = findResult(a, b); return `<li class="matchday-fixture"><div class="match-meta"><span>${String(index + 1).padStart(2, '0')}</span><span>BEGEGNUNG</span>${result ? `<a class="result-source" href="${result.sources[0].path}" target="_blank" rel="noopener">Beleg ${chevron}</a>` : ''}</div><div class="match-pair"><button class="match-player" data-player="${slug(a)}" aria-label="Spielplan von ${a} ansehen" type="button"><strong>${a}</strong><small>Lostopf ${byName.get(a).pot}</small></button><span class="versus${result ? ' match-score' : ''}">${result ? resultScore(result, a) : 'vs.'}</span><button class="match-player" data-player="${slug(b)}" aria-label="Spielplan von ${b} ansehen" type="button"><strong>${b}</strong><small>Lostopf ${byName.get(b).pot}</small></button></div><span class="match-arrow" aria-hidden="true">${chevron}</span></li>`; }).join('');
   if (update) updateURL({spieltag: currentDay}, 'spieltage');
 }
 
@@ -43,7 +43,7 @@ function renderPlayer(id, update = false) {
   currentPlayer = players.find(player => slug(player.name) === id) || players[0];
   document.querySelector('#player-select').value = slug(currentPlayer.name);
   document.querySelector('#player-pot').textContent = `Lostopf ${currentPlayer.pot}`;
-  document.querySelector('#personal-plan').innerHTML = currentPlayer.opponents.map((name, index) => `<li><button type="button" class="personal-fixture" data-open-day="${index + 1}" aria-label="Spieltag ${index + 1}: ${currentPlayer.name} gegen ${name} ansehen"><span class="personal-day">ST <strong>${String(index + 1).padStart(2, '0')}</strong></span><span class="personal-opponent"><strong>${name}</strong><small>Lostopf ${byName.get(name).pot}</small></span><span class="personal-arrow" aria-hidden="true">${chevron}</span></button></li>`).join('');
+  document.querySelector('#personal-plan').innerHTML = currentPlayer.opponents.map((name, index) => { const result = findResult(currentPlayer.name, name); return `<li><button type="button" class="personal-fixture" data-open-day="${index + 1}" aria-label="Spieltag ${index + 1}: ${currentPlayer.name} gegen ${name} ansehen"><span class="personal-day">ST <strong>${String(index + 1).padStart(2, '0')}</strong></span><span class="personal-opponent"><strong>${name}</strong><small>Lostopf ${byName.get(name).pot}${result ? ` · <b class="personal-score">${resultScore(result, currentPlayer.name)}</b>` : ''}</small></span><span class="personal-arrow" aria-hidden="true">${chevron}</span></button></li>`; }).join('');
   document.querySelector('#pot-summary').innerHTML = [1, 2, 3, 4].map(pot => `<span>Topf ${pot}<strong>${currentPlayer.opponents.filter(name => byName.get(name).pot === pot).length} Gegner</strong></span>`).join('');
   if (update) updateURL({spieler: slug(currentPlayer.name)}, 'spielplan');
 }
@@ -82,13 +82,7 @@ for (const player of players) {
   document.querySelector('#all-plans-table tbody').append(row);
 }
 
-// No match results have been recorded: show equal starting records without ranks.
-const alphabeticalPlayers = [...players].sort((a, b) => a.name.localeCompare(b.name, 'de', {numeric: true}));
-document.querySelector('#standings-body').innerHTML = alphabeticalPlayers.map(player => `<tr><td class="rank-column">—</td><th scope="row"><button type="button" data-player="${slug(player.name)}">${player.name}<span>Topf ${player.pot}</span></button></th><td>0</td><td>0</td><td>0</td></tr>`).join('');
-const totalFixtures = matchdays.reduce((total, day) => total + day.matches.length, 0);
-document.querySelector('#tournament-stats').innerHTML = [[players.length, 'Spieler'], [totalFixtures, 'Begegnungen'], [matchdays.length, 'Spieltage'], [new Set(players.map(player => player.pot)).size, 'Lostöpfe']].map(([value, label]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('');
-document.querySelector('#total-fixtures').textContent = `/ ${totalFixtures}`;
-document.querySelector('#results-progress').max = totalFixtures;
+initializeLeagueViews();
 
 document.querySelector('#draw-seed').textContent = drawMetadata.seed;
 document.querySelectorAll('[data-view], .logo-link').forEach(link => link.addEventListener('click', event => {
@@ -118,6 +112,7 @@ function restoreLocation() {
   const params = new URL(location.href).searchParams;
   renderMatchday(params.get('spieltag'));
   renderPlayer(params.get('spieler'));
+  restoreStatistics(params);
   const hash = location.hash.slice(1);
   showView(viewNames.includes(hash) ? hash : params.has('spieler') && !params.has('spieltag') ? 'spielplan' : params.has('spieltag') ? 'spieltage' : 'tabelle');
   if (hash === 'hinweis') document.querySelector('#hinweis').open = true;

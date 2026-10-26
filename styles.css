@@ -167,3 +167,15 @@
 
 .standings-scroll-hint{display:none}
 @media(max-width:600px){.standings-scroll-hint{display:block;text-align:right;color:var(--muted);font-size:9px;margin:0 0 8px}}
+
+/* Compact personal fixtures: day, opponent and chevron share one row. */
+:root .personal-plan{gap:8px}
+:root .personal-fixture{display:grid;grid-template-columns:24px minmax(0,1fr) 10px;align-items:center;gap:7px;padding:10px;min-height:62px}
+:root .personal-day{flex-direction:column;align-items:flex-start;gap:2px;min-width:0;font-size:8px}
+:root .personal-day strong{font-size:22px}
+:root .personal-opponent{min-width:0}
+:root .personal-opponent strong{font-size:26px;overflow-wrap:anywhere}
+:root .personal-opponent small{font-size:9px;margin-top:3px}
+:root .personal-arrow{position:static;margin:0;line-height:1}
+.personal-arrow .action-chevron{width:12px;height:12px}
+@media(max-width:520px){:root .personal-opponent strong{font-size:24px}:root .personal-opponent small{font-size:8px}}

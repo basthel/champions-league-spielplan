@@ -17,27 +17,27 @@
 /* Floating mobile navigation with space for the home indicator. */
 .nav-icon{display:none}
 @media screen and (max-width:800px){
-  body{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
   :root .club-header{padding-bottom:16px}
   :root .main-nav{
-    position:fixed;z-index:20;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));
-    transform:translateX(-50%);width:calc(100% - 28px);max-width:440px;
-    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:0;padding:6px;
-    border:1px solid #ffffff24;border-radius:40px;background:rgba(35,39,37,.94);
-    -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
-    box-shadow:0 8px 32px #0008,inset 0 1px 0 #ffffff0a;
+    position:fixed;z-index:20;left:50%;bottom:calc(4px + env(safe-area-inset-bottom,0px));
+    transform:translateX(-50%);width:calc(100% - 48px);max-width:360px;
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin:0;padding:4px;
+    border:1px solid #ffffff35;border-radius:32px;background:rgba(35,39,37,.38);
+    -webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);
+    box-shadow:0 4px 20px #0005,inset 0 1px 1px #ffffff38,inset 0 -1px 1px #ffffff10;
   }
   :root .main-nav a{
-    flex-direction:column;justify-content:center;gap:5px;min-height:64px;
-    padding:8px 4px;margin:0;border:1px solid transparent;border-radius:32px;
-    font-size:11px;letter-spacing:0;text-transform:none;color:#c3cbc6;
+    flex-direction:column;justify-content:center;gap:3px;min-height:48px;
+    padding:5px 4px;margin:0;border:1px solid transparent;border-radius:26px;
+    font-size:10px;letter-spacing:0;text-transform:none;color:#e0e6e2;
   }
   :root .main-nav a[aria-current=page]{
-    color:var(--green);background:#ffffff10;border-color:#ffffff20;
+    color:var(--green);background:#ffffff14;border-color:#ffffff28;
   }
   :root .main-nav a:focus-visible{outline-offset:1px}
   :root .main-nav .nav-index,:root .main-nav .nav-arrow{display:none}
-  .nav-icon{display:block;width:25px;height:25px;flex-shrink:0}
+  .nav-icon{display:block;width:21px;height:21px;flex-shrink:0}
   :root .main-nav .nav-label{font-weight:500}
   :root .main-nav a[aria-current=page] .nav-label{color:var(--ink)}
 }

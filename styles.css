@@ -189,3 +189,7 @@
 :root .pot li button{min-height:44px;padding:7px 0;gap:8px;font:600 24px/1.1 var(--display)}
 .pot li button .action-chevron{width:12px;height:12px}
 @media(max-width:520px){:root .pot li button{font-size:22px}}
+
+/* Every view begins at the same inset below the header divider. */
+:root main{padding-top:25px}
+:root .view>.view-heading,:root .view>.section-title,:root .view>.player-controls{margin-top:0}

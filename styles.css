@@ -193,3 +193,20 @@
 /* Every view begins at the same inset below the header divider. */
 :root main{padding-top:25px}
 :root .view>.view-heading,:root .view>.section-title,:root .view>.player-controls{margin-top:0}
+
+/* Keep all seven standings columns visible without a wide player column. */
+:root .standings-table{min-width:0;table-layout:fixed}
+.standings-table .col-rank{width:5%}
+.standings-table .col-player{width:28%}
+.standings-table .col-played{width:8%}
+.standings-table .col-points{width:9%}
+.standings-table .col-legs{width:15%}
+.standings-table .col-average,.standings-table .col-checkout{width:17.5%}
+:root .standings-table th,:root .standings-table td{width:auto;min-width:0;padding:8px 4px}
+@media(max-width:800px){
+  :root .standings-table th,:root .standings-table td{padding:7px 2px}
+  .standings-table thead th{font-size:9px}
+  .standings-table tbody td,.standings-table .rank-column{font-size:11px}
+  :root .standings-table tbody th button{font-size:20px;gap:2px}
+  .standings-table tbody th button span{font-size:8px}
+}

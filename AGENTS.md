@@ -60,3 +60,13 @@ match once but aggregate player appearances from the selected scope.
 Arena only. Keep descriptions short, player cards compact, SVG icons minimal,
 and mobile navigation thin and translucent. Tab order:
 Tabelle, Spieltage, Spielplan, Statistik, Lostöpfe.
+
+## PWA maintenance
+
+The app is installable from GitHub Pages via `manifest.webmanifest` and
+`service-worker.js`. Keep the manifest's `id`, `scope` and `start_url` relative
+to this project folder. Do not change the app ID during normal updates.
+The worker uses network-first caching for shell/data, so online results refresh
+rather than staying stale. If adding essential dependencies, add them to
+`CORE_FILES` and bump the worker cache version. Do not pre-cache the whole
+screenshot archive. Run `node --test tests/pwa.test.cjs` after PWA changes.

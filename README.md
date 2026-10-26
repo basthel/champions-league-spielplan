@@ -142,3 +142,43 @@ Scoring, high scores and checkout records are never inferred from absent data.
 The optional weighted 3-dart average needs dart counts for every contributing
 match. Leaderboards exclude unavailable values and share ranks on ties.
 Statistic deep links preserve scope, category and leaderboard metric.
+
+## Installable app (PWA)
+
+The HTTPS GitHub Pages site includes a web app manifest with project-relative
+identity, start URL and scope, standalone display, PNG launcher icons and a
+maskable icon. iPhone home-screen metadata and a 180px Apple icon are included.
+
+- Android Chrome: use the browser menu's install action, or the footer's
+  **App installieren** button when Chrome offers an install prompt.
+- iPhone Safari: Share → Add to Home Screen; leave **Open as Web App** enabled.
+- Installation is completed by the user through their browser; no app store is
+  involved. Browser-specific prompt availability is controlled by the browser.
+
+After the first successful visit, a service worker caches the app shell,
+scripts, styles, logo, fixture/results data and text download. Network-first
+requests keep online users current and fall back to cached content when the
+network fails (after at most four seconds). Offline deep links preserve selected
+players, matchdays and statistic filters. Google Fonts retains system fallbacks.
+Original screenshot evidence is not bulk-downloaded for offline use.
+
+The worker is scoped to this project's directory and never clears another app's
+caches. Its canonical cache keys ignore query-string version tags so cached
+scripts also work for offline deep links. It does not intercept external sites.
+
+When adding a new essential file, add it to `CORE_FILES` in `service-worker.js`
+and bump `CACHE_NAME`'s version. Normal changes to existing files and results use
+network-first refresh automatically. Keep `manifest.webmanifest` and the icons
+in the repository; do not change the manifest's app ID on routine updates.
+
+Additional checks (Node 20+):
+```sh
+node --test tests/pwa.test.cjs
+node --check service-worker.js
+node --check pwa.js
+```
+
+Browser verification includes a subdirectory deployment matching GitHub Pages,
+worker activation, cached player/fixture/data loading after stopping the local
+server, and returning to online network-first requests. Actual installation
+confirmation remains on the user's phone.

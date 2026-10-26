@@ -260,3 +260,10 @@
 #statistik .statistics-ranking button{font-size:22px}
 @media(max-width:800px){#statistik .section-title h2{font-size:36px}}
 @media(max-width:360px){#statistik .stat-metrics dd{font-size:26px}}
+
+.install-app{padding:0;border:0;background:none;color:var(--green);font-size:10px;text-align:left;min-height:32px}
+.offline-status{font-size:10px;color:var(--muted)}
+@media(display-mode:standalone){
+  body{padding-top:env(safe-area-inset-top,0px)}
+  #install-app{display:none}
+}

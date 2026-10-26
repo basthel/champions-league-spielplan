@@ -4,8 +4,15 @@ Public, static German-language match-plan website for 16 players in four pots.
 
 Website: https://basthel.github.io/champions-league-spielplan/
 
-The matchday view shows all eight fixtures for a selected day. Use its dropdown
-or previous/next buttons; direct links look like `?spieltag=4#spieltage`.
+Three logo-led designs share the same validated data and controls:
+
+- `?design=1`: Club, a dark dashboard with a club sidebar.
+- `?design=2`: Matchsheet, a light fixture sheet with a vertical matchday index.
+- `?design=3`: Arena, a dark scoreboard with red match cards.
+
+Use the design chooser to compare them while keeping the selected player or day.
+The matchday view shows all eight fixtures for a selected day. Use its numbered
+day buttons or previous/next buttons; direct links look like `?design=1&spieltag=4#spieltage`.
 Personal player links continue to use `?spieler=abi#spielplan`.
 
 ## Generate and check a correct draw

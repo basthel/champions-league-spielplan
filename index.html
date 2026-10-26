@@ -1,76 +1,65 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-design="1">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142d27">
-  <meta name="description" content="Der korrigierte Champions-League-Spielplan: 16 Spieler, acht Spieltage und genau zwei Gegner aus jedem Lostopf. Automatisch auf alle Spielplanregeln geprüft.">
-  <title>Champions League · Unser Spielplan</title>
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=matchdays-1">
+  <meta name="theme-color" content="#101411">
+  <meta name="description" content="Haumdaucher Champions League. Alle Spieltage, Begegnungen und Spieler. 16 Spieler, 8 Spieltage, 2 Gegner aus jedem Lostopf.">
+  <title>Haumdaucher · Champions League</title>
+  <link rel="icon" href="./assets/haumdaucher-logo.jpg" type="image/jpeg">
+  <script>const requestedDesign = new URLSearchParams(location.search).get('design'); document.documentElement.dataset.design = ['1','2','3'].includes(requestedDesign) ? requestedDesign : '1';</script>
+  <link rel="stylesheet" href="./styles.css?v=haumdaucher-1">
   <script src="./schedule-data.js?v=matchdays-1" defer></script>
-  <script src="./app.js?v=matchdays-1" defer></script>
+  <script src="./app.js?v=haumdaucher-1" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#spielplan">Zum Spielplan</a>
-  <header class="site-header wrap">
-    <a class="brand" href="./" aria-label="Champions League Startseite"><span class="brand-mark" aria-hidden="true">CL<span>✦</span></span><span>UNSERE LIGA<span>CHAMPIONS LEAGUE</span></span></a>
-    <nav aria-label="Hauptnavigation"><a href="#spielplan">Spielplan</a><a href="#spieltage">Spieltage</a><a href="#lostoepfe">Lostöpfe</a></nav>
-    <span class="header-note">DIE NEUE AUSLOSUNG</span>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> CHAMPIONS LEAGUE · LIGAPHASE</p>
-          <h1 id="hero-title">16 Spieler.<br>Ein <span>Ziel.</span></h1>
-          <p class="hero-description">Die Gegner stehen auf dem Zettel.<br>Hier findest du deinen Weg durch die Ligaphase.</p>
-          <a class="primary-button" href="#spielplan">Deinen Spielplan finden <span aria-hidden="true">↗</span></a>
+  <a class="skip-link" href="#content">Zum Spielplan</a>
+  <div class="design-bar">
+    <span class="design-label">DESIGN AUSWÄHLEN</span>
+    <nav class="design-switch" aria-label="Design auswählen">
+      <a data-design-link="1" href="?design=1">01 <span>Club</span></a>
+      <a data-design-link="2" href="?design=2">02 <span>Matchsheet</span></a>
+      <a data-design-link="3" href="?design=3">03 <span>Arena</span></a>
+    </nav>
+  </div>
+  <div class="app-shell">
+    <header class="club-header">
+      <a class="logo-link" href="#spieltage" aria-label="Haumdaucher Spieltage"><img class="club-logo" src="./assets/haumdaucher-logo.jpg" width="1600" height="1600" alt="Haumdaucher: Vogel vor einer Dartscheibe mit drei Dartpfeilen"></a>
+      <div class="brand-copy"><p>DARTS · CHAMPIONS LEAGUE</p><h1>HAUM<span>DAUCHER</span></h1></div>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="#spieltage" data-view="spieltage"><span class="nav-index">01</span>Spieltage<span class="nav-arrow" aria-hidden="true">↗</span></a>
+        <a href="#spielplan" data-view="spielplan"><span class="nav-index">02</span>Spielplan<span class="nav-arrow" aria-hidden="true">↗</span></a>
+        <a href="#lostoepfe" data-view="lostoepfe"><span class="nav-index">03</span>Lostöpfe<span class="nav-arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="club-stats"><div><strong>16</strong><span>Spieler</span></div><div><strong>08</strong><span>Spieltage</span></div><div><strong>64</strong><span>Spiele</span></div></div>
+    </header>
+    <main id="content" tabindex="-1">
+      <div class="workspace-top"><span>LIGAPHASE</span><span class="verified">✓ Spielplan geprüft</span></div>
+      <section id="spieltage" class="view" aria-labelledby="matchday-heading">
+        <div class="view-heading"><div><p class="heading-kicker">ALLE BEGEGNUNGEN</p><h2 id="matchday-heading">Spieltag <span id="day-number">01</span></h2></div><div class="heading-actions"><button id="previous-matchday" class="icon-button" aria-label="Vorheriger Spieltag" aria-controls="matchday-fixtures" type="button">←</button><button id="next-matchday" class="icon-button" aria-label="Nächster Spieltag" aria-controls="matchday-fixtures" type="button">→</button><button id="matchday-share-button" class="share-button" type="button" aria-label="Spieltag-Link kopieren"><span class="share-label">Teilen</span> <span aria-hidden="true">↗</span></button></div></div>
+        <div class="day-layout">
+          <div id="round-selector" class="round-selector" role="group" aria-label="Spieltag auswählen"></div>
+          <div class="matchday-body"><div class="fixture-labels"><span>8 BEGEGNUNGEN</span><span>TERMINE OFFEN</span></div><ol id="matchday-fixtures" class="matchday-fixtures" aria-live="polite" aria-label="Begegnungen am ausgewählten Spieltag"></ol></div>
         </div>
-        <div class="hero-graphic" aria-hidden="true">
-          <div class="graphic-top"><span>DER WEG ZUM TITEL</span><span>✦</span></div>
-          <svg class="trophy" viewBox="0 0 300 260" fill="none"><circle cx="150" cy="119" r="105" stroke="currentColor" stroke-opacity=".12"/><circle cx="150" cy="119" r="80" stroke="currentColor" stroke-opacity=".12"/><path d="M105 61h90l-8 62c-3 25-18 40-37 40s-34-15-37-40l-8-62Z" stroke="currentColor" stroke-width="4"/><path d="M108 76H80v19c0 25 15 40 36 40m76-59h28v19c0 25-15 40-36 40M150 163v39m-29 17h58m-44-17h30l8 17h-46l8-17Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><path d="m150 87 5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1 5-11Z" fill="currentColor"/><path d="m52 39 3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1 3-7Zm191 135 3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1 3-7Z" fill="currentColor"/></svg>
-          <div class="hero-stats"><div><strong>16</strong><span>SPIELER</span></div><div><strong>04</strong><span>LOSTÖPFE</span></div><div><strong>08</strong><span>GEGNER JE SPIELER</span></div></div>
-        </div>
-      </div>
-      <div class="draft-banner verified-banner"><div class="wrap"><span class="draft-label">✓ &nbsp; SPIELPLAN GEPRÜFT</span><span>Neue Auslosung: genau 2 Gegner aus jedem Lostopf und ein Spiel pro Spieltag. <a href="#hinweis">Details lesen <span aria-hidden="true">↗</span></a></span></div></div>
-    </section>
-
-    <section id="spielplan" class="wrap schedule-section" aria-labelledby="schedule-title">
-      <div class="section-heading"><div><p class="eyebrow">DEIN WEG DURCH DIE LIGAPHASE</p><h2 id="schedule-title">Wer ist dein Gegner?</h2></div><span class="section-index" aria-hidden="true">01 / SPIELPLAN</span></div>
-      <div class="plan-controls"><div class="player-field"><label for="player-select">Wähle deinen Namen</label><select id="player-select" aria-controls="personal-plan"></select></div><button id="share-button" class="secondary-button" type="button">Spielplan-Link kopieren <span aria-hidden="true">↗</span></button></div>
-      <div id="personal-plan" aria-live="polite" aria-atomic="true"></div>
+      </section>
+      <section id="spielplan" class="view" aria-labelledby="player-heading" hidden>
+        <div class="view-heading"><div><p class="heading-kicker">DEIN SPIELPLAN</p><h2 id="player-heading">Abi</h2></div><button id="share-button" class="share-button" type="button" aria-label="Spielplan-Link kopieren"><span class="share-label">Teilen</span> <span aria-hidden="true">↗</span></button></div>
+        <div class="player-controls"><label for="player-select">Spieler auswählen</label><select id="player-select" aria-controls="personal-plan"></select><span id="player-pot" class="player-pot"></span></div>
+        <ol id="personal-plan" class="personal-plan" aria-live="polite" aria-label="Persönliche Begegnungen"></ol>
+        <div id="pot-summary" class="pot-summary"></div>
+      </section>
+      <section id="lostoepfe" class="view" aria-labelledby="pots-heading" hidden>
+        <div class="view-heading"><div><p class="heading-kicker">16 SPIELER · 4 LOSTÖPFE</p><h2 id="pots-heading">Das Feld<span class="title-period">.</span></h2></div></div>
+        <div id="pots" class="pots-grid"></div>
+      </section>
       <p id="share-status" class="share-status" role="status"></p>
-      <p class="schedule-caption">Korrigierte, neu erzeugte Auslosung. Die acht Spieltage sind für alle Spieler abgestimmt. Es sind noch keine Termine festgelegt.</p>
-      <noscript><p>Bitte aktiviere JavaScript für die Spielerauswahl. Alle Spielpläne stehen auch in der <a href="./spielplaene.txt">Textversion</a>.</p></noscript>
-    </section>
-
-    <section id="spieltage" class="wrap schedule-section matchday-section" aria-labelledby="matchdays-title">
-      <div class="section-heading"><div><p class="eyebrow">DIE LIGA AUF EINEN BLICK</p><h2 id="matchdays-title">Alle Spiele. Ein Spieltag.</h2></div><span class="section-index" aria-hidden="true">02 / SPIELTAGE</span></div>
-      <div class="plan-controls matchday-controls">
-        <div class="day-picker">
-          <button id="previous-matchday" class="day-step" type="button" aria-label="Vorheriger Spieltag" aria-controls="matchday-plan">←</button>
-          <div class="player-field"><label for="matchday-select">Spieltag auswählen</label><select id="matchday-select" aria-controls="matchday-plan"></select></div>
-          <button id="next-matchday" class="day-step" type="button" aria-label="Nächster Spieltag" aria-controls="matchday-plan">→</button>
-        </div>
-        <button id="matchday-share-button" class="secondary-button" type="button">Spieltag-Link kopieren <span aria-hidden="true">↗</span></button>
-      </div>
-      <div id="matchday-plan" aria-live="polite" aria-atomic="true"></div>
-      <p id="matchday-share-status" class="share-status" role="status"></p>
-      <p class="schedule-caption">Alle 16 Spieler treten einmal an. Die Reihenfolge der Namen legt kein Heimrecht fest. Termine sind noch offen.</p>
-      <noscript><p>Alle Begegnungen nach Spieltag stehen auch in der <a href="./spielplaene.txt">Textversion</a>.</p></noscript>
-    </section>
-
-    <section id="lostoepfe" class="pots-section" aria-labelledby="pots-title"><div class="wrap">
-      <div class="section-heading"><div><p class="eyebrow">DAS TEILNEHMERFELD</p><h2 id="pots-title">Vier Töpfe. Alle dabei.</h2></div><span class="section-index" aria-hidden="true">03 / LOSTÖPFE</span></div>
-      <p class="section-description">Die vier Lostöpfe bleiben unverändert. „5er Korbi“ heißt jetzt „Kaiser“.<br>Wähle einen Spieler, um seinen Spielplan anzusehen.</p>
-      <div id="pots" class="pots-grid"></div>
-      <details class="all-plans"><summary>Alle Spielpläne im Überblick <span aria-hidden="true">+</span></summary><p class="table-hint">Die Spalten zeigen die Gegner für Spieltag 1–8. Auf kleinen Bildschirmen seitlich scrollen.</p><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Korrigierte Auslosung · 64 unterschiedliche Begegnungen · automatisch geprüft</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>
-    </div></section>
-
-    <aside id="hinweis" class="wrap note-section" aria-labelledby="note-title"><span class="note-icon" aria-hidden="true">✓</span><div><p class="eyebrow">TRANSPARENZ ZUR AUSLOSUNG</p><h2 id="note-title">Neu ausgelost. Alle Regeln geprüft.</h2><p>Dieser neu erzeugte Spielplan ersetzt den fehlerhaften ursprünglichen Entwurf. Die Spieler und ihre Lostöpfe bleiben gleich; die Begegnungen und ihre Reihenfolge wurden neu ausgelost. Jeder Spieler hat acht verschiedene Gegner, genau zwei aus jedem Lostopf, und tritt an jedem der acht Spieltage genau einmal an. Jede Begegnung steht bei beiden Spielern am selben Spieltag.</p><p>64 unterschiedliche Begegnungen. Die Reihenfolge der Namen legt kein Heimrecht fest. Termine sind noch offen.</p><p>Auslosungs-Seed: <span id="draw-seed"></span> · <a href="./schedule.json">Spielplan-Daten</a> · <a href="https://github.com/basthel/champions-league-spielplan/blob/main/scripts/generate_schedule.py">Generator-Script</a></p><a href="./spielplaene.txt">Alle Spielpläne als Text öffnen <span aria-hidden="true">↗</span></a></div></aside>
-  </main>
-  <footer class="wrap site-footer"><span>UNSERE LIGA <span aria-hidden="true">✦</span> UNSER SPIELPLAN</span><a href="#">Zurück nach oben ↑</a></footer>
+      <footer class="app-footer">
+        <div class="footer-links"><span>HAUMDAUCHER CL</span><a href="./spielplaene.txt">Spielplan herunterladen ↗</a></div>
+        <details class="overview"><summary>Gesamtplan</summary><div class="table-scroll" role="region" aria-label="Alle Spielpläne, seitlich scrollbar" tabindex="0"><table id="all-plans-table"><caption>Alle acht Spieltage</caption><thead><tr><th scope="col">Spieler</th><th scope="col">Topf</th><th scope="col">ST 1</th><th scope="col">ST 2</th><th scope="col">ST 3</th><th scope="col">ST 4</th><th scope="col">ST 5</th><th scope="col">ST 6</th><th scope="col">ST 7</th><th scope="col">ST 8</th></tr></thead><tbody></tbody></table></div></details>
+        <details id="hinweis"><summary>Regeln & Auslosung</summary><p>8 verschiedene Gegner. Je 2 aus jedem Lostopf. Ein Spiel pro Spieltag. Kein Heimrecht zugewiesen.</p><p>Die korrigierte Auslosung ersetzt den ursprünglichen Entwurf. Kaiser (vormals 5er Korbi) und 5er sind getrennte Spieler.</p><p>Seed <span id="draw-seed"></span> · <a href="./schedule.json">Daten</a> · <a href="https://github.com/basthel/champions-league-spielplan/blob/main/scripts/generate_schedule.py">Generator</a></p></details>
+      </footer>
+      <noscript><p>Bitte JavaScript aktivieren oder den <a href="./spielplaene.txt">Spielplan als Text öffnen</a>.</p></noscript>
+    </main>
+  </div>
 </body>
 </html>

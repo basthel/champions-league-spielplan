@@ -1,6 +1,6 @@
 'use strict';
 
-// All three designs share the same validated fixtures and controls.
+// Arena uses the validated fixtures for every view.
 const slug = name => name.toLowerCase().replaceAll('ä', 'ae').replaceAll(' ', '-');
 const byName = new Map(players.map(player => [player.name, player]));
 const viewNames = ['spieltage', 'spielplan', 'lostoepfe'];
@@ -9,22 +9,11 @@ let currentDay = 1;
 let currentPlayer = players[0];
 let currentView = 'spieltage';
 
-function syncLinks() {
-  document.querySelectorAll('[data-design-link]').forEach(link => {
-    const url = new URL(location.href);
-    url.searchParams.set('design', link.dataset.designLink);
-    link.href = url.href;
-    if (link.dataset.designLink === document.documentElement.dataset.design) link.setAttribute('aria-current', 'page');
-    else link.removeAttribute('aria-current');
-  });
-}
-
 function updateURL(changes, view, push = false) {
   const url = new URL(location.href);
   for (const [key, value] of Object.entries(changes)) url.searchParams.set(key, value);
   if (view) url.hash = view;
   history[push ? 'pushState' : 'replaceState'](null, '', url);
-  syncLinks();
 }
 
 function showView(view, update = false) {
@@ -124,7 +113,6 @@ document.querySelector('main').addEventListener('click', event => {
 async function share(kind) {
   const url = new URL(location.href);
   url.search = '';
-  url.searchParams.set('design', document.documentElement.dataset.design);
   url.searchParams.set(kind === 'day' ? 'spieltag' : 'spieler', kind === 'day' ? currentDay : slug(currentPlayer.name));
   url.hash = kind === 'day' ? 'spieltage' : 'spielplan';
   try {
@@ -148,7 +136,6 @@ function restoreLocation() {
   const hash = location.hash.slice(1);
   showView(viewNames.includes(hash) ? hash : params.has('spieler') && !params.has('spieltag') ? 'spielplan' : 'spieltage');
   if (hash === 'hinweis') document.querySelector('#hinweis').open = true;
-  syncLinks();
 }
 window.addEventListener('popstate', restoreLocation);
 window.addEventListener('hashchange', restoreLocation);

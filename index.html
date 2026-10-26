@@ -1,27 +1,18 @@
 <!doctype html>
-<html lang="de" data-design="1">
+<html lang="de" data-design="3">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101411">
+  <meta name="theme-color" content="#070808">
   <meta name="description" content="Haumdaucher Champions League. Alle Spieltage, Begegnungen und Spieler. 16 Spieler, 8 Spieltage, 2 Gegner aus jedem Lostopf.">
   <title>Haumdaucher · Champions League</title>
   <link rel="icon" href="./assets/haumdaucher-logo.jpg" type="image/jpeg">
-  <script>const requestedDesign = new URLSearchParams(location.search).get('design'); document.documentElement.dataset.design = ['1','2','3'].includes(requestedDesign) ? requestedDesign : '1';</script>
-  <link rel="stylesheet" href="./styles.css?v=haumdaucher-1">
+  <link rel="stylesheet" href="./styles.css?v=arena-2">
   <script src="./schedule-data.js?v=matchdays-1" defer></script>
-  <script src="./app.js?v=haumdaucher-2" defer></script>
+  <script src="./app.js?v=arena-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Zum Spielplan</a>
-  <div class="design-bar">
-    <span class="design-label">DESIGN AUSWÄHLEN</span>
-    <nav class="design-switch" aria-label="Design auswählen">
-      <a data-design-link="1" href="?design=1">01 <span>Club</span></a>
-      <a data-design-link="2" href="?design=2">02 <span>Matchsheet</span></a>
-      <a data-design-link="3" href="?design=3">03 <span>Arena</span></a>
-    </nav>
-  </div>
   <div class="app-shell">
     <header class="club-header">
       <a class="logo-link" href="#spieltage" aria-label="Haumdaucher Spieltage"><img class="club-logo" src="./assets/haumdaucher-logo.jpg" width="1600" height="1600" alt="Haumdaucher: Vogel vor einer Dartscheibe mit drei Dartpfeilen"></a>

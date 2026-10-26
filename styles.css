@@ -179,3 +179,13 @@
 :root .personal-arrow{position:static;margin:0;line-height:1}
 .personal-arrow .action-chevron{width:12px;height:12px}
 @media(max-width:520px){:root .personal-opponent strong{font-size:24px}:root .personal-opponent small{font-size:8px}}
+
+/* Pots use the same compact, rounded surfaces as player fixtures. */
+:root .pots-grid{gap:8px}
+:root .pot{padding:10px;border:1px solid var(--line);border-radius:8px}
+:root .pot-heading{margin-bottom:4px;gap:8px}
+:root .pot-heading h3{font-size:9px}
+:root .pot-heading>span{font-size:28px}
+:root .pot li button{min-height:44px;padding:7px 0;gap:8px;font:600 24px/1.1 var(--display)}
+.pot li button .action-chevron{width:12px;height:12px}
+@media(max-width:520px){:root .pot li button{font-size:22px}}

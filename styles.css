@@ -56,3 +56,23 @@
 }
 
 .action-chevron{display:inline-block;width:16px;height:16px;vertical-align:middle;flex-shrink:0}
+
+/* The player picker doubles as the page title. */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:root .player-controls{margin:0 0 18px;gap:16px;flex-wrap:nowrap;justify-content:space-between}
+.player-picker{position:relative;min-width:0;flex:1;max-width:380px}
+:root #player-select{
+  display:block;appearance:none;-webkit-appearance:none;
+  width:100%;max-width:100%;min-height:60px;margin:0;padding:0 32px 0 0;
+  border:0;background:transparent;color:var(--ink);
+  font:800 72px/1.1 var(--display);letter-spacing:-.8px;text-transform:uppercase;cursor:pointer;
+}
+#player-select option,#player-select optgroup{font:16px var(--body);background:var(--surface);color:var(--ink);text-transform:none}
+.picker-chevron{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+:root .player-pot{flex-shrink:0;font-size:11px}
+@media(max-width:800px){:root #player-select{font-size:56px;min-height:54px}}
+@media(max-width:520px){
+  :root #player-select{font-size:46px;min-height:50px;padding-right:25px}
+  :root .player-controls{gap:12px;margin-bottom:16px}
+  .picker-chevron{width:16px;height:16px;right:0}
+}

@@ -220,3 +220,23 @@
 .player-picker:focus-within{outline:2px solid var(--green);outline-offset:4px}
 @media(max-width:800px){.player-picker-name{font-size:56px}}
 @media(max-width:520px){.player-picker-name{font-size:46px}:root .player-picker{gap:8px}}
+
+/* Eight mobile fixtures in four compact rows, clear of the bottom navigation. */
+@media screen and (max-width:800px){
+  :root .matchday-fixtures{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;grid-auto-rows:clamp(70px,calc((100svh - 360px)/4),104px)}
+  :root .matchday-fixture{padding:8px;display:flex;flex-direction:column;justify-content:center}
+  :root .match-meta{margin-bottom:5px;gap:5px;font-size:6px;letter-spacing:.2px}
+  :root .match-meta>span:first-child{font-size:11px}
+  :root .match-pair{grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:3px}
+  :root .match-player strong{font-size:22px;line-height:1.05}
+  :root .match-player small{font-size:8px;margin-top:3px}
+  :root .versus{font-size:8px}
+  :root .match-pair:has(.match-score){grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr)}
+  :root .match-score{font-size:18px}
+  .matchday-controls{margin-bottom:12px}
+  .result-source{font-size:7px}
+}
+@media screen and (max-width:520px){
+  :root .matchday-fixtures{grid-auto-rows:clamp(68px,calc((100svh - 320px)/4),104px)}
+  :root .match-player strong{font-size:clamp(17px,5vw,21px)}
+}

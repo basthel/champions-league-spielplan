@@ -5,6 +5,9 @@ Public, static German-language match-plan website for 16 players in four pots.
 Website: https://basthel.github.io/champions-league-spielplan/
 
 Arena is the selected design, with Club-style side-by-side match boxes.
+Tabs: Tabelle (default), Spieltage, Spielplan, Statistik, Lostöpfe.
+No results are recorded yet: standings show equal zero records without ranks;
+performance statistics remain blank until match data is available.
 Legacy design links also open Arena. The matchday view shows all eight fixtures
 for a selected day. Use its numbered day buttons or previous/next buttons;
 direct links look like `?spieltag=4#spieltage`.

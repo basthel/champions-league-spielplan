@@ -76,3 +76,48 @@
   :root .player-controls{gap:12px;margin-bottom:16px}
   .picker-chevron{width:16px;height:16px;right:0}
 }
+
+/* League table and tournament statistics. */
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.section-title h2{font:800 64px/1 var(--display);text-transform:uppercase;letter-spacing:-.8px}
+.data-note{font-size:10px;color:var(--muted)}
+.standings-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.standings-table th,.standings-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:center}
+.standings-table thead th{font-size:10px;font-weight:500;color:var(--muted)}
+.standings-table thead th:nth-child(2),.standings-table tbody th{text-align:left}
+.standings-table abbr{text-decoration:none}
+.standings-table .rank-column{width:32px;color:var(--muted);font-size:11px}
+.standings-table tbody th{width:65%;font-weight:500}
+.standings-table tbody th button{display:flex;align-items:center;gap:12px;width:100%;min-height:32px;padding:0;border:0;background:none;text-align:left;font:600 24px/1.2 var(--display)}
+.standings-table tbody th button span{color:var(--muted);font:9px var(--body)}
+.standings-table tbody td{font-size:12px;color:var(--muted)}
+.standings-table tbody tr:hover{background:var(--surface)}
+.standings-table button:hover{color:var(--green)}
+.tournament-stats,.performance-stats{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tournament-stats>div,.performance-stats>div{padding:18px 0}
+.tournament-stats dt,.performance-stats dt{font-size:10px;color:var(--muted)}
+.tournament-stats dd,.performance-stats dd{margin:4px 0 0;font:700 52px/1 var(--display);color:var(--green)}
+.results-progress{margin:26px 0 30px}
+.results-progress>div{display:flex;justify-content:space-between;font-size:11px;margin-bottom:10px}
+.results-progress strong{font-weight:500}
+.results-progress strong span{color:var(--muted)}
+.results-progress progress{display:block;width:100%;height:4px;appearance:none;border:0;background:var(--line);color:var(--green)}
+.results-progress progress::-webkit-progress-bar{background:var(--line)}
+.results-progress progress::-webkit-progress-value{background:var(--green)}
+.results-progress progress::-moz-progress-bar{background:var(--green)}
+.performance-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.performance-heading h3{font:600 26px var(--display)}
+.performance-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.performance-stats dd{color:var(--muted);font-size:36px}
+:root .main-nav{gap:18px}
+@media screen and (max-width:800px){
+  :root .main-nav{width:calc(100% - 24px);max-width:440px;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}
+  :root .main-nav a{flex-direction:column;gap:2px;font-size:9px;min-width:0;padding:3px 1px}
+  .nav-icon{width:16px;height:16px}
+  .section-title h2{font-size:46px}
+  .standings-table th,.standings-table td{padding:8px 6px}
+  .standings-table tbody th{width:58%}
+  .standings-table tbody th button{font-size:22px;gap:8px}
+  .tournament-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tournament-stats>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}

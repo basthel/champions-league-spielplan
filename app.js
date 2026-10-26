@@ -4,10 +4,10 @@
 const chevron = '<svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg>';
 const slug = name => name.toLowerCase().replaceAll('ä', 'ae').replaceAll(' ', '-');
 const byName = new Map(players.map(player => [player.name, player]));
-const viewNames = ['spieltage', 'spielplan', 'lostoepfe'];
+const viewNames = ['tabelle', 'spieltage', 'spielplan', 'statistik', 'lostoepfe'];
 let currentDay = 1;
 let currentPlayer = players[0];
-let currentView = 'spieltage';
+let currentView = 'tabelle';
 
 function updateURL(changes, view, push = false) {
   const url = new URL(location.href);
@@ -17,7 +17,7 @@ function updateURL(changes, view, push = false) {
 }
 
 function showView(view, update = false) {
-  currentView = viewNames.includes(view) ? view : 'spieltage';
+  currentView = viewNames.includes(view) ? view : 'tabelle';
   document.querySelectorAll('.view').forEach(section => { section.hidden = section.id !== currentView; });
   document.querySelectorAll('[data-view]').forEach(link => {
     if (link.dataset.view === currentView) link.setAttribute('aria-current', 'page');
@@ -82,10 +82,18 @@ for (const player of players) {
   document.querySelector('#all-plans-table tbody').append(row);
 }
 
+// No match results have been recorded: show equal starting records without ranks.
+const alphabeticalPlayers = [...players].sort((a, b) => a.name.localeCompare(b.name, 'de', {numeric: true}));
+document.querySelector('#standings-body').innerHTML = alphabeticalPlayers.map(player => `<tr><td class="rank-column">—</td><th scope="row"><button type="button" data-player="${slug(player.name)}">${player.name}<span>Topf ${player.pot}</span></button></th><td>0</td><td>0</td><td>0</td></tr>`).join('');
+const totalFixtures = matchdays.reduce((total, day) => total + day.matches.length, 0);
+document.querySelector('#tournament-stats').innerHTML = [[players.length, 'Spieler'], [totalFixtures, 'Begegnungen'], [matchdays.length, 'Spieltage'], [new Set(players.map(player => player.pot)).size, 'Lostöpfe']].map(([value, label]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('');
+document.querySelector('#total-fixtures').textContent = `/ ${totalFixtures}`;
+document.querySelector('#results-progress').max = totalFixtures;
+
 document.querySelector('#draw-seed').textContent = drawMetadata.seed;
 document.querySelectorAll('[data-view], .logo-link').forEach(link => link.addEventListener('click', event => {
   event.preventDefault();
-  showView(link.dataset.view || 'spieltage', true);
+  showView(link.dataset.view || 'tabelle', true);
 }));
 document.querySelector('#previous-matchday').addEventListener('click', () => renderMatchday(currentDay - 1, true));
 document.querySelector('#next-matchday').addEventListener('click', () => renderMatchday(currentDay + 1, true));
@@ -111,7 +119,7 @@ function restoreLocation() {
   renderMatchday(params.get('spieltag'));
   renderPlayer(params.get('spieler'));
   const hash = location.hash.slice(1);
-  showView(viewNames.includes(hash) ? hash : params.has('spieler') && !params.has('spieltag') ? 'spielplan' : 'spieltage');
+  showView(viewNames.includes(hash) ? hash : params.has('spieler') && !params.has('spieltag') ? 'spielplan' : params.has('spieltag') ? 'spieltage' : 'tabelle');
   if (hash === 'hinweis') document.querySelector('#hinweis').open = true;
 }
 window.addEventListener('popstate', restoreLocation);

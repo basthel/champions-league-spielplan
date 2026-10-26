@@ -7,25 +7,35 @@
   <meta name="description" content="Haumdaucher Champions League. Alle Spieltage, Begegnungen und Spieler. 16 Spieler, 8 Spieltage, 2 Gegner aus jedem Lostopf.">
   <title>Haumdaucher · Champions League</title>
   <link rel="icon" href="./assets/haumdaucher-logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="./styles.css?v=arena-12">
+  <link rel="stylesheet" href="./styles.css?v=arena-13">
   <script src="./schedule-data.js?v=matchdays-1" defer></script>
-  <script src="./app.js?v=arena-6" defer></script>
+  <script src="./app.js?v=arena-7" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Zum Spielplan</a>
   <div class="app-shell">
     <header class="club-header">
-      <a class="logo-link" href="#spieltage" aria-label="Haumdaucher Spieltage"><img class="club-logo" src="./assets/haumdaucher-logo.jpg" width="1600" height="1600" alt="Haumdaucher: Vogel vor einer Dartscheibe mit drei Dartpfeilen"></a>
+      <a class="logo-link" href="#tabelle" aria-label="Haumdaucher Tabelle"><img class="club-logo" src="./assets/haumdaucher-logo.jpg" width="1600" height="1600" alt="Haumdaucher: Vogel vor einer Dartscheibe mit drei Dartpfeilen"></a>
       <div class="brand-copy"><p>DARTS · CHAMPIONS LEAGUE</p><h1>HAUM<span>DAUCHER</span></h1></div>
       <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="#spieltage" data-view="spieltage"><span class="nav-index">01</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/></svg><span class="nav-label">Spieltage</span><span class="nav-arrow" aria-hidden="true"><svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></span></a>
-        <a href="#spielplan" data-view="spielplan"><span class="nav-index">02</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8m-8 0v4h8V3m-8 2H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M8 12h8m-8 5h5"/></svg><span class="nav-label">Spielplan</span><span class="nav-arrow" aria-hidden="true"><svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></span></a>
-        <a href="#lostoepfe" data-view="lostoepfe"><span class="nav-index">03</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></svg><span class="nav-label">Lostöpfe</span><span class="nav-arrow" aria-hidden="true"><svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></span></a>
+        <a href="#tabelle" data-view="tabelle"><span class="nav-index">01</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V11h4v10m2 0V3h4v18m2 0v-7h4v7M2 21h20"/></svg><span class="nav-label">Tabelle</span></a>
+        <a href="#spieltage" data-view="spieltage"><span class="nav-index">02</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/></svg><span class="nav-label">Spieltage</span><span class="nav-arrow" aria-hidden="true"><svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></span></a>
+        <a href="#spielplan" data-view="spielplan"><span class="nav-index">03</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8m-8 0v4h8V3m-8 2H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M8 12h8m-8 5h5"/></svg><span class="nav-label">Spielplan</span><span class="nav-arrow" aria-hidden="true"><svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></span></a>
+        <a href="#statistik" data-view="statistik"><span class="nav-index">04</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9m5 10V4m6 15v-6m5 6V7M2 22h20"/></svg><span class="nav-label">Statistik</span></a>
+        <a href="#lostoepfe" data-view="lostoepfe"><span class="nav-index">05</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/></svg><span class="nav-label">Lostöpfe</span><span class="nav-arrow" aria-hidden="true"><svg class="action-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></span></a>
       </nav>
       <div class="club-stats"><div><strong>16</strong><span>Spieler</span></div><div><strong>08</strong><span>Spieltage</span></div><div><strong>64</strong><span>Spiele</span></div></div>
     </header>
     <main id="content" tabindex="-1">
-      <section id="spieltage" class="view" aria-labelledby="matchday-heading">
+      <section id="tabelle" class="view" aria-labelledby="standings-heading">
+        <div class="section-title"><h2 id="standings-heading">Tabelle<span class="title-period">.</span></h2><span class="data-note">Noch keine Ergebnisse</span></div>
+        <table class="standings-table">
+          <caption class="visually-hidden">Ligatabelle vor dem ersten erfassten Ergebnis, alphabetisch sortiert</caption>
+          <thead><tr><th scope="col" class="rank-column">#</th><th scope="col">Spieler</th><th scope="col"><abbr title="Gespielte Spiele">Sp</abbr></th><th scope="col"><abbr title="Siege">S</abbr></th><th scope="col"><abbr title="Niederlagen">N</abbr></th></tr></thead>
+          <tbody id="standings-body"></tbody>
+        </table>
+      </section>
+      <section id="spieltage" class="view" aria-labelledby="matchday-heading" hidden>
         <div class="view-heading"><div><p class="heading-kicker">ALLE BEGEGNUNGEN</p><h2 id="matchday-heading">Spieltag <span id="day-number">01</span></h2></div></div>
         <div class="day-layout">
           <div class="matchday-controls"><div id="round-selector" class="round-selector" role="group" aria-label="Spieltag auswählen"></div><div class="heading-actions"><button id="previous-matchday" class="icon-button" aria-label="Vorheriger Spieltag" aria-controls="matchday-fixtures" type="button">←</button><button id="next-matchday" class="icon-button" aria-label="Nächster Spieltag" aria-controls="matchday-fixtures" type="button">→</button></div></div>
@@ -37,6 +47,13 @@
         <div class="player-controls"><div class="player-picker"><select id="player-select" aria-label="Spieler auswählen" aria-controls="personal-plan"></select><svg class="picker-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></div><span id="player-pot" class="player-pot"></span></div>
         <ol id="personal-plan" class="personal-plan" aria-live="polite" aria-label="Persönliche Begegnungen"></ol>
         <div id="pot-summary" class="pot-summary"></div>
+      </section>
+      <section id="statistik" class="view" aria-labelledby="statistics-heading" hidden>
+        <div class="section-title"><h2 id="statistics-heading">Statistik<span class="title-period">.</span></h2></div>
+        <dl id="tournament-stats" class="tournament-stats"></dl>
+        <div class="results-progress"><div><span>Erfasste Ergebnisse</span><strong>0 <span id="total-fixtures"></span></strong></div><progress id="results-progress" value="0" max="64" aria-label="Erfasste Ergebnisse"></progress></div>
+        <div class="performance-heading"><h3>Leistungen</h3><span class="data-note">Noch keine Spielstatistiken</span></div>
+        <dl class="performance-stats"><div><dt>3-Dart-Average</dt><dd>—</dd></div><div><dt>180er</dt><dd>—</dd></div><div><dt>Höchstes Checkout</dt><dd>—</dd></div></dl>
       </section>
       <section id="lostoepfe" class="view" aria-labelledby="pots-heading" hidden>
         <div class="view-heading"><div><p class="heading-kicker">16 SPIELER · 4 LOSTÖPFE</p><h2 id="pots-heading">Das Feld<span class="title-period">.</span></h2></div></div>

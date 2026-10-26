@@ -42,6 +42,7 @@ function renderMatchday(value, update = false) {
 function renderPlayer(id, update = false) {
   currentPlayer = players.find(player => slug(player.name) === id) || players[0];
   document.querySelector('#player-select').value = slug(currentPlayer.name);
+  document.querySelector('.player-picker-name').textContent = currentPlayer.name;
   document.querySelector('#player-pot').textContent = `Lostopf ${currentPlayer.pot}`;
   document.querySelector('#personal-plan').innerHTML = currentPlayer.opponents.map((name, index) => { const result = findResult(currentPlayer.name, name); return `<li><button type="button" class="personal-fixture" data-open-day="${index + 1}" aria-label="Spieltag ${index + 1}: ${currentPlayer.name} gegen ${name} ansehen"><span class="personal-day">ST <strong>${String(index + 1).padStart(2, '0')}</strong></span><span class="personal-opponent"><strong>${name}</strong><small>Lostopf ${byName.get(name).pot}${result ? ` · <b class="personal-score">${resultScore(result, currentPlayer.name)}</b>` : ''}</small></span><span class="personal-arrow" aria-hidden="true">${chevron}</span></button></li>`; }).join('');
   document.querySelector('#pot-summary').innerHTML = [1, 2, 3, 4].map(pot => `<span>Topf ${pot}<strong>${currentPlayer.opponents.filter(name => byName.get(name).pot === pot).length} Gegner</strong></span>`).join('');

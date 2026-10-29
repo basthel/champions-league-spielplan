@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-29-scorer-reference-2242",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-29-scorer-reference-2242.png",
+    "sha256": "7b7fc88da4d93cf0d8ec4ebe42a9ac9061d465c3d27fe5245857873165641523",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-7bf0c073-f94f-42dd-aebd-e73703bffd1e.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": null,
+      "setsWon": null,
+      "stats": {}
+    },
+    {
+      "name": "Ginzi",
+      "legsWon": null,
+      "setsWon": null,
+      "stats": {}
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected as a feature reference. Preserve the scoring-app name Ginzi; do not map this example into scheduled league results. Phone clock is not a match date."
+  ],
+  "purpose": "Scorer interface reference supplied by the user, not a submitted league result.",
+  "settings": {
+    "mode": "X01",
+    "startPoints": 501,
+    "checkOut": "double",
+    "sets": 1,
+    "legs": 3,
+    "format": "first-to",
+    "checkIn": "straight",
+    "randomOrder": false
+  }
+}

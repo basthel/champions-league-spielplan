@@ -24,6 +24,72 @@
       "path": "data/screenshots/IMG_2190.png",
       "sha256": "977591fdff422aec4e28476a5ccb67bfef8198127b7661f2e3bb984a636b5620",
       "originalFilename": "IMG_2190.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-29-scorer-reference-2243.json",
+      "path": "data/screenshots/2026-10-29-scorer-reference-2243.png",
+      "sha256": "1e9a2edc6923e683772d7e48f171418c0950be9796be675568e2934b61c25e5a",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-a436abe2-547f-487f-a297-ae5178c8bf5d.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-29-scorer-reference-2242.json",
+      "path": "data/screenshots/2026-10-29-scorer-reference-2242.png",
+      "sha256": "7b7fc88da4d93cf0d8ec4ebe42a9ac9061d465c3d27fe5245857873165641523",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-7bf0c073-f94f-42dd-aebd-e73703bffd1e.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-29-scorer-reference-2241.json",
+      "path": "data/screenshots/2026-10-29-scorer-reference-2241.png",
+      "sha256": "7c075fa8fb661907580d371867c6870be960212808bdd3d1c2a764b32cc4c49b",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-4d246902-0bf3-460a-a4fe-ed965dc594b0.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-29-scorer-reference-2250.json",
+      "path": "data/screenshots/2026-10-29-scorer-reference-2250.png",
+      "sha256": "e93264d09b8c3824afe54b541f655944eab8ee48102344fb5692d9742f98f899",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-66561d5d-e993-49ae-8ee3-f6ec2c707e10.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-29-scorer-reference-2249.json",
+      "path": "data/screenshots/2026-10-29-scorer-reference-2249.png",
+      "sha256": "e1926ad531aad5686cfce584cd374ddd0940cc89e4077746d9e9460770f2a213",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-434dee29-3fb3-41b9-9d31-900104125161.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-30-scorer-feedback-2254.json",
+      "path": "data/screenshots/2026-10-30-scorer-feedback-2254.png",
+      "sha256": "8de95dacee9d14ee76d6b3fa0f6c09f110d8e11d30f057f73a5b166943a493a1",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-746a0d65-e060-46b3-af4e-aa5090abfec5.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-30-scorer-feedback-2253.json",
+      "path": "data/screenshots/2026-10-30-scorer-feedback-2253.png",
+      "sha256": "ad952202a51a71dee0046039728467de6c829578df9c9bcbcae7dc65f3bbee86",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-4ff193a2-3959-4660-a4e0-abed52405167.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-30-scorer-feedback-2255.json",
+      "path": "data/screenshots/2026-10-30-scorer-feedback-2255.png",
+      "sha256": "57020b403775d2278cef1967fcf8bc21bf65509abd8cc5e7ccbb925871c94e29",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-d99bbb97-72d7-47b9-a286-b7ab84b7509e.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-30-scorer-feedback-2258.json",
+      "path": "data/screenshots/2026-10-30-scorer-feedback-2258.png",
+      "sha256": "8b3f9e2cee156d6ae839f921264569abc27c882c44f76a8f43942347801e9fcf",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-770b90ea-2fe6-4abb-9e16-1eec89ec43f1.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-30-scorer-feedback-2259.json",
+      "path": "data/screenshots/2026-10-30-scorer-feedback-2259.png",
+      "sha256": "60a7393e6765f6354e2bc1f673d34a890d3cf7a59f7b74a8cb855e4c05255660",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-52a9ebbb-9d7d-465d-8a1c-b7f4e49651e9.png"
+    },
+    {
+      "extraction": "data/extractions/2026-10-30-scorer-feedback-2260.json",
+      "path": "data/screenshots/2026-10-30-scorer-feedback-2260.png",
+      "sha256": "9d4fa35386085f7df28bb512cb6c3b70dec2767d96f9fecc9e82481b5fb784a1",
+      "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-13f4b50a-f97d-4511-ab7d-e6a0ffb0c76f.png"
     }
   ]
 }

@@ -182,3 +182,75 @@ Browser verification includes a subdirectory deployment matching GitHub Pages,
 worker activation, cached player/fixture/data loading after stopping the local
 server, and returning to online network-first requests. Actual installation
 confirmation remains on the user's phone.
+
+## Hidden Dart Scorer preview
+
+Open `scorer.html`, or expand **Regeln & Auslosung** in the league footer and
+follow **Dart Scorer · Vorschau**. The five league tabs stay unchanged. This is
+an unlisted preview with `noindex`; anyone with the URL can open it.
+
+The scorer runs entirely in the browser, with no account, API, or backend:
+
+- X01 (101/301/501/701/1001), 1–4 players with league-name suggestions, optional
+  computer opponents at three strengths, reorder and random starting order.
+  Remove players down to one for solo practice, or clear the list and add yourself.
+  Solo play advances directly to your next visit, with the same saved statistics.
+  Choose **Anwurf** after bulling up, independently of the name order, or select
+  a random starter. Subsequent leg starters rotate from that selected player.
+  The choice is preserved when renaming, reordering, shuffling or resuming a game.
+- Straight/Double In; Straight/Double/Master Out; First to or Best of legs and
+  sets. Best of supports solo practice or two players; multiple sets require odd Best of counts.
+  The league preset is 501, Double Out, Best of 12 (first to seven, or 6:6).
+- Dart-by-dart single/double/triple entry, bull, misses, bust handling, checkout
+  suggestions, alternating leg starters, and undo across leg/set boundaries.
+  Leg/set/match checkouts open an overlay with an explicit continue action and
+  **Zurück / korrigieren** to undo an accidental checkout; reloading restores it.
+  Undo after a computer turn also rewinds its automatic darts to the last human
+  input. The computer pauses when leaving the scoring view or hiding the tab.
+- Saved running/completed games, leg overview, visit history, comparative
+  statistics with category filters, deletion, and per-game JSON export.
+- **Teilen** in the final-game overlay and summary shares the same JSON file
+  through the phone's native share menu. Select WhatsApp and the recipient there;
+  the scorer does not select an app or send messages automatically. File sharing
+  requires HTTPS and support for JSON attachments on the device. If unavailable
+  (including the LAN HTTP preview), the file downloads with instructions for
+  attaching it manually. Cancelling the share menu does not download a file.
+
+Each dart is saved in `localStorage` under `haumdaucher-scorer-v1`. Reloading
+replays the event log, including partial visits. Open **Alle Spiele** to resume.
+Storage failure displays a warning and preserves the game in memory for export.
+Concurrent changes from another tab pause edits and offer a reload. Browser
+storage is specific to that browser, device and origin; clearing it removes
+saved games. JSON exports are readable backups, with no import UI at present.
+Scorer matches never write to canonical league results or the fixture draw.
+
+Statistics use credited points and standard statistical dart counts: a bust
+zeros its entire visit and counts three darts; a checkout or current partial
+visit counts only the darts entered. First-nine and dart-position scoring use
+zero points for the unused darts of a busted visit. Actual entered dart records
+remain unchanged; field hit rates and checkout opportunities use only those
+records. JSON exports retain both `darts` (statistical) and `recordedDarts`
+(entered). Existing saved matches recalculate from their original event logs.
+See [statistics verification](docs/scorer-statistics.md).
+Checkout opportunities count darts with a valid one-dart finish
+available before the throw, not inferred attempts at a particular double.
+High-round buckets are disjoint: 60–99, 100–139, 140–179, and 180. The in-app
+calculation note explains these conventions. Screenshot references from
+2026-10-29 are archived as examples, separate from league results.
+
+The service worker caches the scorer shell, styles and scripts for offline play
+after the app has loaded successfully online.
+
+Double Out checkout hints use the researched, offline `checkout-data.js` lookup
+for 2–170, with separate recommendations for one, two or three darts remaining.
+The computer opponent uses the same table. See [sources and route choices](docs/checkout-routes.md).
+Straight Out and Master Out retain their mathematical search.
+
+Validate scoring, checkout routes, JSON sharing, and PWA behavior:
+
+```sh
+node --test tests/*.test.cjs
+node --check scorer.js
+node --check scorer-engine.js
+node --check scorer-share.js
+```

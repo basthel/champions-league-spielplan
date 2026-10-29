@@ -2,14 +2,15 @@
 
 // Keep this cache local to the Haumdaucher project, not other GitHub Pages sites.
 const CACHE_PREFIX = 'haumdaucher-champions-league-';
-const CACHE_NAME = CACHE_PREFIX + 'v1';
+const CACHE_NAME = CACHE_PREFIX + 'v4';
 const CORE_FILES = [
   './', './index.html', './styles.css', './schedule-data.js', './league-data.js',
   './league-ui.js', './app.js', './pwa.js', './manifest.webmanifest',
   './schedule.json', './league-data.json', './spielplaene.txt',
   './assets/haumdaucher-logo.jpg', './assets/icons/icon-180.png',
   './assets/icons/icon-192.png', './assets/icons/icon-512.png',
-  './assets/icons/icon-maskable-512.png'
+  './assets/icons/icon-maskable-512.png',
+  './scorer.html', './scorer.css', './checkout-data.js', './scorer-engine.js', './scorer-share.js', './scorer.js'
 ];
 const scopeURL = new URL('./', self.location.href);
 const pageURL = new URL('./index.html', scopeURL).href;

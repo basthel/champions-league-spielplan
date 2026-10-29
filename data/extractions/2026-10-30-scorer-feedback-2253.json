@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-30-scorer-feedback-2253",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-30-scorer-feedback-2253.png",
+    "sha256": "ad952202a51a71dee0046039728467de6c829578df9c9bcbcae7dc65f3bbee86",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-4ff193a2-3959-4660-a4e0-abed52405167.png"
+  },
+  "playedAt": null,
+  "players": [],
+  "reviewNotes": [
+    "Both images visually inspected. Preserve only legible source values. Phone status-bar clock is not a match date. Cropped or obscured metrics remain null."
+  ],
+  "purpose": "Scorer UI bug report: unwanted green focus frame; not a submitted league result.",
+  "games": [
+    {
+      "sourcePlayedAtText": "29.10.26, 23:45",
+      "playedAt": "2026-10-29",
+      "sourceStatus": "BEENDET",
+      "players": [
+        {
+          "name": "Bastl",
+          "legsWon": 1,
+          "stats": {}
+        },
+        {
+          "name": "Computer 1",
+          "legsWon": 0,
+          "stats": {}
+        }
+      ],
+      "settings": {
+        "startPoints": 501,
+        "checkOut": "double",
+        "format": "best-of",
+        "legs": 1
+      }
+    },
+    {
+      "sourcePlayedAtText": "29.10.26, 23:33",
+      "playedAt": "2026-10-29",
+      "sourceStatus": "BEENDET",
+      "players": [
+        {
+          "name": "Bastl",
+          "legsWon": 3,
+          "stats": {}
+        },
+        {
+          "name": "Ginzei",
+          "legsWon": 1,
+          "stats": {}
+        }
+      ],
+      "settings": {
+        "startPoints": 501,
+        "checkOut": "double",
+        "format": "first-to",
+        "legs": 3
+      }
+    }
+  ]
+}

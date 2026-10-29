@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-30-scorer-feedback-2259",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-30-scorer-feedback-2259.png",
+    "sha256": "60a7393e6765f6354e2bc1f673d34a890d3cf7a59f7b74a8cb855e4c05255660",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-52a9ebbb-9d7d-465d-8a1c-b7f4e49651e9.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": null,
+      "stats": {}
+    },
+    {
+      "name": "Ginzei",
+      "legsWon": null,
+      "stats": {}
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected. Setup screen shows Bastl and Ginzei and no selected Anwurf. The native dropdown appears above the control after a validation jump. No played date, legs, or statistics are present; phone clock is not a match date."
+  ],
+  "purpose": "Scorer setup UI bug report: misplaced native dropdown after auto jump; not a league result.",
+  "settings": {
+    "startPoints": 501,
+    "checkOut": "double",
+    "startingPlayer": null
+  }
+}

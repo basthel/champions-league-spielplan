@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-30-scorer-feedback-2255",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-30-scorer-feedback-2255.png",
+    "sha256": "57020b403775d2278cef1967fcf8bc21bf65509abd8cc5e7ccbb925871c94e29",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-d99bbb97-72d7-47b9-a286-b7ab84b7509e.png"
+  },
+  "playedAt": "2026-10-29",
+  "players": [
+    {
+      "name": "Ginzei",
+      "legsWon": 3,
+      "stats": {}
+    },
+    {
+      "name": null,
+      "legsWon": 2,
+      "stats": {}
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected. Names in the horizontally scrolled leg table are outside the image. Opponent name is not visible; do not infer it from other screenshots. Rows are transcribed by position. Phone clock is not a match date."
+  ],
+  "purpose": "Scorer UI feedback: move summary actions below results and improve leg statistics readability; not a league result.",
+  "sourcePlayedAtText": "29.10.26, 23:58",
+  "sourceStatus": "BEENDET",
+  "settings": {
+    "startPoints": 501,
+    "checkOut": "double",
+    "format": "first-to",
+    "legs": 3
+  },
+  "legOverview": [
+    {
+      "set": 1,
+      "leg": 2,
+      "rows": [
+        {
+          "row": 1,
+          "name": null,
+          "darts": 6,
+          "average": 180,
+          "remaining": 141,
+          "checkout": null,
+          "won": false
+        },
+        {
+          "row": 2,
+          "name": null,
+          "darts": 9,
+          "average": 167,
+          "remaining": 0,
+          "checkout": 141,
+          "won": true
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 3,
+      "rows": [
+        {
+          "row": 1,
+          "name": null,
+          "darts": 11,
+          "average": 136.64,
+          "remaining": 0,
+          "checkout": 81,
+          "won": true
+        },
+        {
+          "row": 2,
+          "name": null,
+          "darts": 9,
+          "average": 120,
+          "remaining": 141,
+          "checkout": null,
+          "won": false
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 4,
+      "rows": [
+        {
+          "row": 1,
+          "name": null,
+          "darts": 9,
+          "average": 120,
+          "remaining": 141,
+          "checkout": null,
+          "won": false
+        },
+        {
+          "row": 2,
+          "name": null,
+          "darts": 11,
+          "average": 136.64,
+          "remaining": 0,
+          "checkout": 41,
+          "won": true
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 5,
+      "rows": [
+        {
+          "row": 1,
+          "name": null,
+          "darts": 9,
+          "average": 167,
+          "remaining": 0,
+          "checkout": 141,
+          "won": true
+        },
+        {
+          "row": 2,
+          "name": null,
+          "darts": 6,
+          "average": 180,
+          "remaining": 141,
+          "checkout": null,
+          "won": false
+        }
+      ]
+    }
+  ]
+}

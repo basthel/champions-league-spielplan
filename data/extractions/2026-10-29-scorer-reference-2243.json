@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-29-scorer-reference-2243",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-29-scorer-reference-2243.png",
+    "sha256": "1e9a2edc6923e683772d7e48f171418c0950be9796be675568e2934b61c25e5a",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-a436abe2-547f-487f-a297-ae5178c8bf5d.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": 0,
+      "setsWon": 0,
+      "stats": {
+        "dartsThrown": 0,
+        "average": null
+      },
+      "remaining": 501
+    },
+    {
+      "name": "Ginzi",
+      "legsWon": 0,
+      "setsWon": 0,
+      "stats": {
+        "dartsThrown": 0,
+        "average": null
+      },
+      "remaining": 501
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected as a feature reference. Preserve the scoring-app name Ginzi; do not map this example into scheduled league results. Phone clock is not a match date."
+  ],
+  "purpose": "Scorer interface reference supplied by the user, not a submitted league result.",
+  "settings": {
+    "mode": "X01",
+    "startPoints": 501,
+    "checkOut": "double",
+    "sets": 1,
+    "legs": 3,
+    "format": "first-to"
+  },
+  "round": 1,
+  "activePlayer": "Bastl"
+}

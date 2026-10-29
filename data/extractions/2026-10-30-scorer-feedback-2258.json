@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-30-scorer-feedback-2258",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-30-scorer-feedback-2258.png",
+    "sha256": "8b3f9e2cee156d6ae839f921264569abc27c882c44f76a8f43942347801e9fcf",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-770b90ea-2fe6-4abb-9e16-1eec89ec43f1.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Ginzei",
+      "legsWon": 0,
+      "remaining": 501,
+      "stats": {
+        "dartsThrown": 1,
+        "average": 0.0
+      }
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected. Only the current Ginzei card is visible; opponent and match settings/date are absent. Phone clock is not a match date. Values are an in-progress leg, not final league statistics."
+  ],
+  "purpose": "Scorer UI feedback: bottom-row Double/Triple and smaller Undo, with larger number keys. Not a submitted league result.",
+  "visibleState": {
+    "visit": 1,
+    "atThrow": true,
+    "visitDarts": [
+      "0",
+      null,
+      null
+    ],
+    "visitScore": 0,
+    "remaining": 501,
+    "dartsLeft": 2,
+    "checkoutText": "Kein Checkout mit 2 Darts möglich."
+  }
+}

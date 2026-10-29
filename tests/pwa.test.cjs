@@ -81,6 +81,19 @@ test('precache supports offline deep links, data and versioned script requests',
   assert.match(await script.text(), /app.js/);
   const data = await worker.request(base + 'league-data.js?v=results-2');
   assert.match(await data.text(), /league-data.js/);
+  const scorer = await worker.request(base + 'scorer.html?preview=1#live/saved-game', 'navigate');
+  assert.match(await scorer.text(), /scorer.html/);
+  for (const file of ['scorer.css', 'checkout-data.js', 'scorer-engine.js', 'scorer-share.js', 'scorer.js']) {
+    assert.match(await (await worker.request(base + file + '?v=1')).text(), new RegExp(file.replace('.', '\\.')));
+  }
+});
+
+test('every precached app asset exists on disk', async () => {
+  const worker = workerHarness();
+  await worker.event('install');
+  for (const cache of worker.stores.values()) {
+    for (const url of cache.keys()) assert.ok(fs.existsSync(path.join(root, new URL(url).pathname.slice(new URL(base).pathname.length))), url);
+  }
 });
 
 test('online requests refresh cached league data rather than keeping stale results', async () => {

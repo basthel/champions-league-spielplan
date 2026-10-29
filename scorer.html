@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070808">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Scorer · Haumdaucher</title>
+  <link rel="icon" href="./assets/icons/icon-192.png" type="image/png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-180.png">
+  <link rel="stylesheet" href="./styles.css?v=arena-27">
+  <link rel="stylesheet" href="./scorer.css?v=share-16">
+  <script src="./schedule-data.js?v=matchdays-1" defer></script>
+  <script src="./checkout-data.js?v=1" defer></script>
+  <script src="./scorer-engine.js?v=anwurf-5" defer></script>
+  <script src="./scorer-share.js?v=1" defer></script>
+  <script src="./scorer.js?v=share-18" defer></script>
+</head>
+<body class="scorer-page">
+  <a class="skip-link" href="#scorer-content">Zum Scorer</a>
+  <div class="scorer-shell">
+    <header class="scorer-header">
+      <a class="scorer-brand" href="./index.html#tabelle" aria-label="Zurück zur Haumdaucher Liga"><img src="./assets/haumdaucher-logo.jpg" alt="" width="56" height="56"><span>HAUMDAUCHER<small>DART SCORER</small></span></a>
+      <span class="scorer-beta">VORSCHAU</span>
+      <a class="scorer-league" href="./index.html#tabelle">Zur Liga <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="scorer-content" class="scorer-main" tabindex="-1">
+      <nav class="scorer-nav" aria-label="Scorer"><a href="#setup" data-route="setup">Neues Spiel</a><a href="#games" data-route="games">Alle Spiele <span id="game-count">0</span></a><a href="#live" data-route="live" id="live-link" hidden>Zum Spiel</a></nav>
+      <p id="storage-warning" class="scorer-warning" role="alert" hidden></p>
+      <p id="scorer-message" class="visually-hidden" role="status" aria-live="polite"></p>
+      <div id="scorer-view"></div>
+      <footer class="scorer-footer"><span>HAUMDAUCHER · X01</span><span>Nur auf diesem Gerät gespeichert · kein Ligaeintrag</span></footer>
+      <noscript>Bitte JavaScript aktivieren, um den Dart Scorer zu verwenden.</noscript>
+    </main>
+  </div>
+  <dialog id="leg-dialog" class="leg-result-dialog" aria-labelledby="leg-result-title"></dialog>
+  <dialog id="delete-dialog" aria-labelledby="delete-title"><form method="dialog"><h2 id="delete-title">Spiel löschen?</h2><p>Das gespeicherte Spiel wird von diesem Gerät entfernt.</p><div class="scorer-actions"><button value="cancel" class="scorer-button">Behalten</button><button value="delete" class="scorer-button danger">Spiel löschen</button></div></form></dialog>
+</body>
+</html>

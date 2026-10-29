@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-29-scorer-reference-2241",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-29-scorer-reference-2241.png",
+    "sha256": "7c075fa8fb661907580d371867c6870be960212808bdd3d1c2a764b32cc4c49b",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-4d246902-0bf3-460a-a4fe-ed965dc594b0.png"
+  },
+  "playedAt": "2026-10-29",
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": 3,
+      "setsWon": null,
+      "stats": {},
+      "remaining": 0
+    },
+    {
+      "name": "Ginzi",
+      "legsWon": 1,
+      "setsWon": null,
+      "stats": {},
+      "remaining": 60
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected as a feature reference. Preserve the scoring-app name Ginzi; do not map this example into scheduled league results. Phone clock is not a match date.",
+    "Final-leg right-edge residual values are cropped; kept null. Leg 3 winner still shows 2 in the overview; preserved as reported, not reconciled."
+  ],
+  "purpose": "Scorer interface reference supplied by the user, not a submitted league result.",
+  "sourcePlayedAtText": "29.10.2026 22:24",
+  "sourceStatus": "BEENDET",
+  "settings": {
+    "mode": "X01",
+    "startPoints": 501,
+    "checkOut": "double",
+    "legs": 3,
+    "format": "first-to"
+  },
+  "legOverview": [
+    {
+      "set": 1,
+      "leg": 1,
+      "players": [
+        {
+          "name": "Bastl",
+          "darts": 35,
+          "average": 42.94,
+          "remaining": 20,
+          "won": true
+        },
+        {
+          "name": "Ginzi",
+          "darts": 33,
+          "average": 45.36,
+          "remaining": 2,
+          "won": false
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 2,
+      "players": [
+        {
+          "name": "Bastl",
+          "darts": 34,
+          "average": 44.21,
+          "remaining": 10,
+          "won": true
+        },
+        {
+          "name": "Ginzi",
+          "darts": 36,
+          "average": 41.08,
+          "remaining": 8,
+          "won": false
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 3,
+      "players": [
+        {
+          "name": "Bastl",
+          "darts": 29,
+          "average": 51.62,
+          "remaining": 2,
+          "won": false
+        },
+        {
+          "name": "Ginzi",
+          "darts": 29,
+          "average": 51.83,
+          "remaining": 2,
+          "won": true
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 4,
+      "players": [
+        {
+          "name": "Bastl",
+          "darts": 20,
+          "average": 75.15,
+          "remaining": null,
+          "won": true
+        },
+        {
+          "name": "Ginzi",
+          "darts": 21,
+          "average": 63.0,
+          "remaining": null,
+          "won": false
+        }
+      ]
+    }
+  ]
+}

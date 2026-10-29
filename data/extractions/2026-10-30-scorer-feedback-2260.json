@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-30-scorer-feedback-2260",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-30-scorer-feedback-2260.png",
+    "sha256": "9d4fa35386085f7df28bb512cb6c3b70dec2767d96f9fecc9e82481b5fb784a1",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-13f4b50a-f97d-4511-ab7d-e6a0ffb0c76f.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": 0,
+      "remaining": 501,
+      "stats": {
+        "dartsThrown": 0,
+        "average": null
+      }
+    },
+    {
+      "name": "Ginzei",
+      "legsWon": 0,
+      "remaining": 501,
+      "stats": {
+        "dartsThrown": 0,
+        "average": null
+      }
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected. New in-progress game, no match date or completed result shown. Phone clock is not a match date. Missing averages are displayed as dashes and remain null."
+  ],
+  "purpose": "Scorer UI feedback: reclaim empty hint space for taller number keys; not a submitted league result.",
+  "settings": {
+    "startPoints": 501,
+    "checkOut": "double",
+    "format": "first-to",
+    "legs": 3
+  },
+  "visibleState": {
+    "set": 1,
+    "leg": 1,
+    "atThrow": "Bastl",
+    "dartsLeft": 3
+  }
+}

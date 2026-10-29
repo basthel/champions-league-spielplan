@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-29-scorer-reference-2249",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-29-scorer-reference-2249.png",
+    "sha256": "e1926ad531aad5686cfce584cd374ddd0940cc89e4077746d9e9460770f2a213",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-434dee29-3fb3-41b9-9d31-900104125161.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": 3,
+      "setsWon": null,
+      "stats": {
+        "hit20Pct": 49.58,
+        "hit20or19Pct": 51.26,
+        "hit60Pct": 9.24,
+        "hit60or57Pct": 9.24,
+        "triplePct": 11.76,
+        "legsPlayed": 4,
+        "legsWon": 3,
+        "legWinPct": 75.0,
+        "dartsThrown": 119,
+        "average": 50.47,
+        "first9Average": 67.42,
+        "highestRound": 140,
+        "bestLegAverage": 75.15,
+        "totalPoints": 2002,
+        "dart1Average": 61.39,
+        "dart2Average": 54.97,
+        "dart3Average": 34.86,
+        "scores60": 8,
+        "scores100": 2,
+        "scores140": 3
+      }
+    },
+    {
+      "name": "Ginzi",
+      "legsWon": 1,
+      "setsWon": null,
+      "stats": {
+        "hit20Pct": 29.41,
+        "hit20or19Pct": 37.82,
+        "hit60Pct": 10.08,
+        "hit60or57Pct": 10.92,
+        "triplePct": 21.01,
+        "legsPlayed": 4,
+        "legsWon": 1,
+        "legWinPct": 25.0,
+        "dartsThrown": 119,
+        "average": 48.76,
+        "first9Average": 46.75,
+        "highestRound": 140,
+        "bestLegAverage": 63.0,
+        "totalPoints": 1934,
+        "dart1Average": 40.5,
+        "dart2Average": 47.4,
+        "dart3Average": 59.0,
+        "scores60": 8,
+        "scores100": 3,
+        "scores140": 2
+      }
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected as a feature reference. Preserve the scoring-app name Ginzi; do not map this example into scheduled league results. Phone clock is not a match date."
+  ],
+  "purpose": "Scorer interface reference supplied by the user, not a submitted league result."
+}

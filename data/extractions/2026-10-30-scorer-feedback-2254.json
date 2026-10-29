@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-30-scorer-feedback-2254",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-30-scorer-feedback-2254.png",
+    "sha256": "8de95dacee9d14ee76d6b3fa0f6c09f110d8e11d30f057f73a5b166943a493a1",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-746a0d65-e060-46b3-af4e-aa5090abfec5.png"
+  },
+  "playedAt": "2026-10-29",
+  "players": [
+    {
+      "name": "Ginzei",
+      "legsWon": 3,
+      "stats": {}
+    },
+    {
+      "name": "Bastl",
+      "legsWon": 2,
+      "stats": {}
+    }
+  ],
+  "reviewNotes": [
+    "Both images visually inspected. Preserve only legible source values. Phone status-bar clock is not a match date. Cropped or obscured metrics remain null.",
+    "Leg 3 and later columns are cropped. Safari toolbar obscures parts of the Bastl row; no missing averages inferred from dart counts."
+  ],
+  "purpose": "Scorer UI bug report: unwanted green focus frame; not a submitted league result.",
+  "sourcePlayedAtText": "29.10.26, 23:58",
+  "sourceStatus": "BEENDET",
+  "settings": {
+    "startPoints": 501,
+    "checkOut": "double",
+    "format": "first-to",
+    "legs": 3
+  },
+  "legOverview": [
+    {
+      "set": 1,
+      "leg": 1,
+      "players": [
+        {
+          "name": "Ginzei",
+          "darts": 23,
+          "average": 65.35,
+          "remaining": 0,
+          "checkout": 37,
+          "won": true
+        },
+        {
+          "name": "Bastl",
+          "darts": 21,
+          "average": null,
+          "remaining": 101,
+          "checkout": null,
+          "won": false
+        }
+      ]
+    },
+    {
+      "set": 1,
+      "leg": 2,
+      "players": [
+        {
+          "name": "Ginzei",
+          "darts": 6,
+          "average": 180.0,
+          "remaining": 141,
+          "checkout": null,
+          "won": false
+        },
+        {
+          "name": "Bastl",
+          "darts": 6,
+          "average": null,
+          "remaining": 0,
+          "checkout": 141,
+          "won": true
+        }
+      ]
+    }
+  ]
+}

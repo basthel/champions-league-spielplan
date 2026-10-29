@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-10-29-scorer-reference-2250",
+  "status": "example",
+  "source": {
+    "path": "data/screenshots/2026-10-29-scorer-reference-2250.png",
+    "sha256": "e93264d09b8c3824afe54b541f655944eab8ee48102344fb5692d9742f98f899",
+    "originalFilename": "7ec36447-0505-4d66-996c-3d1254e65e91-66561d5d-e993-49ae-8ee3-f6ec2c707e10.png"
+  },
+  "playedAt": null,
+  "players": [
+    {
+      "name": "Bastl",
+      "legsWon": null,
+      "setsWon": null,
+      "stats": {
+        "hit20Pct": 49.58,
+        "hit20or19Pct": 51.26,
+        "hit60Pct": 9.24,
+        "hit60or57Pct": 9.24,
+        "triplePct": 11.76,
+        "scores60": 8,
+        "scores100": 2,
+        "scores140": 3,
+        "scores180": 0,
+        "field1Pct": 9.24,
+        "field5Pct": 14.29,
+        "field20Pct": 49.58,
+        "highestCheckout": 50,
+        "bestLegDarts": 20,
+        "checkoutAttempts": 24,
+        "checkoutPct": 12.5,
+        "checkinAttempts": 0,
+        "checkinSuccesses": 0,
+        "checkinPct": null
+      }
+    },
+    {
+      "name": "Ginzi",
+      "legsWon": null,
+      "setsWon": null,
+      "stats": {
+        "hit20Pct": 29.41,
+        "hit20or19Pct": 37.82,
+        "hit60Pct": 10.08,
+        "hit60or57Pct": 10.92,
+        "triplePct": 21.01,
+        "scores60": 8,
+        "scores100": 3,
+        "scores140": 2,
+        "scores180": 0,
+        "field1Pct": 13.45,
+        "field5Pct": 10.92,
+        "field20Pct": 29.41,
+        "highestCheckout": 2,
+        "bestLegDarts": 29,
+        "checkoutAttempts": 22,
+        "checkoutPct": 4.55,
+        "checkinAttempts": 0,
+        "checkinSuccesses": 0,
+        "checkinPct": null
+      }
+    }
+  ],
+  "reviewNotes": [
+    "Visually inspected as a feature reference. Preserve the scoring-app name Ginzi; do not map this example into scheduled league results. Phone clock is not a match date."
+  ],
+  "purpose": "Scorer interface reference supplied by the user, not a submitted league result."
+}
